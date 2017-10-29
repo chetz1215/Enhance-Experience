@@ -1,0 +1,162 @@
+set_progress(0.0);
+ui_print(" ");
+ui_print("--------------------------------------------");
+ui_print(" ");
+ui_print(" E::::::E  E::::::E  ");
+ui_print(" EEEEE   EEEEE       ");
+ui_print(" E          E         ");
+ui_print(" E::::::E  E::::::E  ");
+ui_print(" EEEEE   EEEEE       ");
+ui_print(" E          E         ");
+ui_print(" E::::::E  E::::::E  ");
+ui_print(" EEEEE   EEEEE       ");
+ui_print(" ");
+ui_print("--------------------------------------------");
+
+run_program("/sbin/busybox", "mount", "/system");
+set_progress(0.10);
+if file_getprop("/tmp/aroma-data/device.prop","selected") == "1" then
+	ui_print("mounting system");
+	ui_print("Selected: 8.0 device");
+	package_extract_dir("chetan/Android/8.0", "/sdcard");
+endif;
+if file_getprop("/tmp/aroma-data/device.prop","selected") == "2" then
+	ui_print("mounting system");
+	ui_print("Selected: 7.0 device");
+	package_extract_dir("chetan/Android/7.0", "/sdcard");
+endif;
+if file_getprop("/tmp/aroma-data/device.prop","selected") == "3" then
+	ui_print("mounting system");
+	ui_print("Selected: 6.0 device");
+	package_extract_dir("chetan/Android/6.0", "/sdcard");
+endif;
+if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "1" then
+    ui_print("Performing some calculations...");
+	ui_print("checking aroma data...");
+	ui_print("Sucesfully founded! Starting installtion");
+endif;
+set_progress(0.20);
+if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
+	ui_print("performing some calculations...");
+    ui_print("Checking aroma-data..");
+    ui_print("Sucesfully founded!");
+	ui_print("Unistalling...  ");
+		ui_print("deleting android messages...");
+	delete_recursive("/system/app/AndroidMessages");
+		ui_print("deleting Google Calculator");
+    delete_recursive("/system/app/GoogleCalculator");
+		ui_print("deleteing Google Calendar...");
+    delete_recursive("/system/app/GoogleCalendar");
+		ui_print("deleting Google clock...");
+    delete_recursive("/system/app/GoogleClock");
+		ui_print("deleting Sony Music...");
+    delete_recursive("/system/app/SonyMusic");
+		ui_print("deleting Google phone...");
+    delete_recursive("/system/priv-app/GooglePhone");
+endif;
+set_progress(0.40);
+if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1") == "1" then
+	ui_print("deleting LOS messaging");
+    delete_recursive("/system/app/messaging");
+endif;
+if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1") == "2" then	
+    ui_print("deleting LOS Calculator");
+	delete_recursive("/system/app/ExactCalculator");
+endif;
+if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1") == "3" then
+	ui_print("deleting LOS Calendar");
+    delete_recursive("/system/app/Calendar");
+endif;
+if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1") == "4" then
+	ui_print("deleting LOS Clock");
+    delete_recursive("/system/app/DeskClock");
+endif;
+if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1") == "5" then
+	ui_print("deleting LOS dialer");
+    delete_recursive("/system/priv-app/Dialer");
+endif;
+if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1") == "6" then
+	ui_print("deleting LOS Music app");
+    delete_recursive("/system/app/Eleven");
+	delete_recursive("/system/priv-app/Eleven");
+endif;
+if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1") == "7" then
+	ui_print("deleting PA Music");
+    delete_recursive("/system/app/SnapdragonMusic");
+endif;
+if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1") == "8" then
+	ui_print("deleting PA MMS");
+    delete_recursive("/system/priv-app/Mms");
+	ui_print("For Paranoid Andoird: Deleting MMS");
+endif;
+set_progress(0.60);
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.1") == "1" then
+	ui_print("Extracting Android Messages");
+	package_extract_dir("chetan/Apps/AndroidMessages", "/system");
+endif;
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.2") == "1" then
+	ui_print("Extracting Google Calculator");
+	package_extract_dir("chetan/Apps/GoogleCalculator", "/system");
+endif;
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.3") == "1" then
+	ui_print("Extracting Google Calendar");
+	package_extract_dir("chetan/Apps/GoogleCalendar", "/system");
+endif;
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.4") == "1" then
+	ui_print("Extracting Google Clock");
+	package_extract_dir("chetan/Apps/GoogleClock", "/system");
+endif;
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.5") == "1" then
+	ui_print("Extracting Google Phone");
+	package_extract_dir("chetan/Apps/dialer", "/system");
+endif;
+
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.6") == "1" then
+	ui_print("Extracting Sony Music");
+	package_extract_dir("chetan/Apps/SonyMusic", "/system");
+endif;
+
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.7") == "1" then
+	ui_print("Extracting Lock Sound Effect");
+	package_extract_dir("chetan/Sounds/Lock Effect", "/system");
+endif;
+
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.8") == "1" then
+	ui_print("Extracting Unlock Sound Effect");
+	package_extract_dir("chetan/Sounds/Unlock Effect", "/system");
+endif;
+set_progress(0.80);
+if file_getprop("/tmp/aroma-data/misc.prop","item.1.1") == "1" then
+	ui_print("Executing default files");
+	package_extract_dir("chetan/etc/default", "/system");
+endif;
+
+if file_getprop("/tmp/aroma-data/misc.prop","item.1.2") == "1" then
+	ui_print("Executing pref.apps");
+	package_extract_dir("chetan/etc/pa", "/system");
+endif;
+if file_getprop("/tmp/aroma-data/misc.prop","item.1.3") == "1" then
+	ui_print("Settings permissions...");
+	package_extract_dir("chetan/etc/Permissions", "/system");
+	    ui_print("Setting permissions to GooglePhone... ");
+endif;
+if file_getprop("/tmp/aroma-data/misc.prop","item.1.4") == "1" then
+	ui_print("Extracting google dialer framework");
+	package_extract_dir("chetan/framework/gpf", "/system");
+endif;
+if file_getprop("/tmp/aroma-data/misc.prop","item.1.5") == "1" then
+	ui_print("Making Google Phone as default ");
+    package_extract_dir("scripts", "/tmp");
+    ui_print("Executing scripts...");
+    set_perm(0, 0, 0755, "/tmp/dialler_default.sh");
+    run_program("/tmp/dialler_default.sh");
+    ui_print("Deleting unwated files... ");
+    delete("/tmp/dialler_default.sh");
+endif;
+if file_getprop("/tmp/aroma-data/misc.prop","item.1.6") == "1" then
+	ui_print("Optimizng boot speed");
+    package_extract_dir("chetan/optz", "/system");
+endif;
+set_progress(0.90);
+run_program("/sbin/busybox", "umount", "/system");
+set_progress(1.0);

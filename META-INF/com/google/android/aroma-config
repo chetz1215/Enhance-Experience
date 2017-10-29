@@ -1,0 +1,151 @@
+###
+#
+# Copyright (C) 2011 Ahmad Amarullah ( http://amarullz.com/ )
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# It's Made by chetan_1215 kindly don't steal any stuffs! Ask my permissions!
+
+ini_set("rom_name",			"Enhance Experience");
+ini_set("rom_version",		"v13.5");
+ini_set("rom_author",		"chetan_1215");
+ini_set("rom_device",		"Android Devices for 6.0+");
+ini_set("rom_date",			"22/10/2017");
+ini_set("force_colorspace", "rgba");
+##
+
+splash(
+
+    3000,
+  
+    "sample"
+);
+
+
+fontresload( "0", "ttf/DroidSansFallback.ttf;", "12" ); #-- Use sets of font (Font Family)
+
+theme("material_red");
+
+agreebox(
+  #-- Title
+    "Only conditions",
+  
+  #-- Subtitle / Description
+    "Please read it before proceeding futher on installtion",
+  
+  #-- Icon
+    "@license",
+  
+  #-- Text Content ( Read from <AROMA Resource Dir>/license.txt )
+    resread("license.txt"),
+  
+  #-- Checkbox Text
+    "I have read it",
+  
+  #-- Unchecked Alert Message
+    "bruh first check on that checkbox"
+);
+
+menubox(
+	  "",
+	  "Select Your android Version",
+	  "icons/update",
+	  "device.prop",
+
+	  "8.0  ",	            	   "Oreo",	                     "@android-o",         	   #-- selected = 1
+	  "7.0+ ",	        	       "Nougat",	                 "@android-n",             #-- selected = 2
+	  "6.0+ ",        			   "Marshmallow",			     "@android-m"              #-- selected = 3 							
+);
+
+selectbox(
+         "",
+		 "Choose between them",
+		 "icons/update",
+		 "flash.prop",
+		 
+		 "Install or Unistall", "", 2,                                                  #-- Group 1. key = "selected.1"
+		 "Install Enhance Experience", "Enhance your phone", 1,                                #-- selected.1 = 1
+		 "Unistall Enhance Experience","UnEnhance your phone", 0                             #-- selected.1 = 2
+); 
+
+checkbox(
+  "",
+  "Uninstall Stock Apps",
+  "icons/apps",
+  "deletelist.prop",	
+	
+  	"Select which Apps to delete","",                              2, #-- Group 1
+	"Messaging","Stock lineageos Messaging app.",0,
+	"Calculator","Stock lineageos Calculator app.",0,
+	"Calendar","Stock lineageos Calendar app.",0,
+	"Clock","Stock lineageos Clock app.",0,
+	"Phone","Stock lineageos Phone app.",0,
+	"Eleven","Stock lineageos Music app.",0,
+	"Snapdragon Music","Paranoid Android: Music app.",0,
+	"MMS","Paranoid Android: Messaging app.", 0
+         
+);
+checkbox(
+  "",
+  "Installation",
+  "icons/apps",
+  "apps.prop",	
+	
+  	"Select which Apps to install","",                              2, #-- Group 1
+	"AndroidMessages","",0,
+	"Google Calculator","",0,
+	"Google Calendar","",0,
+	"Google Clock","",0,
+	"Google Phone","",0,
+	"Sony Music","",0,
+	"Screen Lock sound effect","",0,
+	"Screen Unlock sound effect","",0
+);
+	
+checkbox(
+  "",
+  "MISC",
+  "icons/personalize",
+  "misc.prop",	
+	
+  	"Esseintial files,MISC","",                              2, #-- Group 1
+	"default permissions","For settings required permissions.",0,
+	"pref apps","Making messages and some other apps as preffered.",0,
+    "permissions","To set folder premissions for apps.",0,
+	"Google Phone Framework","Please select this if you'll install google phone.",0,
+	"Make Google phone default phone app","If you don't want do to this manually, check here.",0,
+	"Optimize for faster boot","So far works with only android 8.0",0
+);
+
+setvar("retstatus",
+  install(
+	#-- Title
+      "Installing",
+	
+	#-- Installation Process message
+	  "<b>"+ini_get("rom_name")+"</b> installation.\n\n"+
+      "Please wait while installation wizard installs <b>"+ini_get("rom_name")+
+	  "</b>. This may take several seconds.",
+	
+	#-- Installation Icon
+      "@install",
+	
+	#-- Installation Finish Message
+      "Enhancing Completed! Thank you for downloading <b>"+ini_get("rom_name")+
+	  "</b>. Press Next to continue else Save logs if you encountred a bug."
+  )
+);
+
+ini_set("text_next", "Finish");
+
+#---- FINISH
+
