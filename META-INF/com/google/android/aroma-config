@@ -16,10 +16,10 @@
 # It's Made by chetan_1215 kindly don't steal any stuffs! Ask my permissions!
 
 ini_set("rom_name",			"Enhance Experience");
-ini_set("rom_version",		"v13.5");
+ini_set("rom_version",		"v14.0");
 ini_set("rom_author",		"chetan_1215");
-ini_set("rom_device",		"Android Devices for 6.0+");
-ini_set("rom_date",			"22/10/2017");
+ini_set("rom_device",		"Android Devices 6.0+");
+ini_set("rom_date",			"30/10/2017");
 ini_set("force_colorspace", "rgba");
 ##
 
@@ -31,9 +31,23 @@ splash(
 );
 
 
-fontresload( "0", "ttf/DroidSansFallback.ttf;", "12" ); #-- Use sets of font (Font Family)
+fontresload( "0", "ttf/DroidSansFallback.ttf;", "12" );
+fontresload( "1", "ttf/DroidSansFallback.ttf;", "14" );
 
 theme("material_red");
+
+viewbox(
+    "Welcome!",
+    "\nYou are about to Install <b>"+
+	  ini_get("rom_name")+
+	"</b> for <b>"+ini_get("rom_device")+"</b>.\n\n"+
+    "<b> Enhance Experience - Enhance your custom ROM experience, bascially removes your LOS apps and replaces them with Google apps with some little extra features. You can select what you want to delete and what to install during installtion.</b>"+
+      "  VERSION\t\t: <b><#selectbg_g>"+ini_get("rom_version")+"</#></b>\n"+
+      "  UPDATED\t\t: <b><#selectbg_g>"+ini_get("rom_date")+"</#></b>\n\n\n"+
+    "Press Next",
+    ""
+);
+
 
 agreebox(
   #-- Title
@@ -74,8 +88,28 @@ selectbox(
 		 
 		 "Install or Unistall", "", 2,                                                  #-- Group 1. key = "selected.1"
 		 "Install Enhance Experience", "Enhance your phone", 1,                                #-- selected.1 = 1
-		 "Unistall Enhance Experience","UnEnhance your phone", 0                             #-- selected.1 = 2
+		 "Uninstall Enhance Experience","UnEnhance your phone", 0                             #-- selected.1 = 2
 ); 
+
+if prop("flash.prop","selected.1") == "2" then
+setvar("retstatus",
+  install(
+	#-- Title
+      "Installing",
+	
+	#-- Installation Process message
+	  "<b>"+ini_get("rom_name")+"</b> installation.\n\n"+
+      "Please wait while installation wizard uninstalls <b>"+ini_get("rom_name")+
+	  "</b>. This may take several seconds.",
+	
+	#-- Installation Icon
+      "@install",
+	
+	#-- Installation Finish Message
+      "UnEnhancing Completed! Thank you for downloading <b>"+ini_get("rom_name")+
+	  "</b>. Press Next to continue else Save logs if you encountred a bug."
+  )
+);
 
 checkbox(
   "",
