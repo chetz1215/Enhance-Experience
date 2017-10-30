@@ -1,16 +1,13 @@
 
 ****ENHANCE EXPERIENCE****
 -   by @chetan_1215
--   Version: 13.5 - Beta
--   Date: 22/10/2017
+-   Version: 14.0 - Beta
+-   Date: 30/10/2017
 
-Condtions:
-1) Second Aroma beta release, Most of the bugs has been fixed.
+1) A stable release.
 
-2) Unistaller has been added within the MOD so you don't have to download extra file and clutter your space.
+2) The Mod is doing Everything as expected
 
-3) To unistall, select unistall and click next, don't select any options which appears else you may delete LOS Apps too.
-
-4) Tons of underhood changes has been done for smoothest yet fastest experience.
+3) For detail info check new repo at github
 
 Enjoy! ;)
