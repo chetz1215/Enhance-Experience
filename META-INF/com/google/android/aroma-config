@@ -94,22 +94,11 @@ selectbox(
 if prop("flash.prop","selected.1") == "2" then
 setvar("retstatus",
   install(
-	#-- Title
-      "Installing",
-	
-	#-- Installation Process message
-	  "<b>"+ini_get("rom_name")+"</b> installation.\n\n"+
-      "Please wait while installation wizard uninstalls <b>"+ini_get("rom_name")+
-	  "</b>. This may take several seconds.",
-	
-	#-- Installation Icon
-      "@install",
-	
-	#-- Installation Finish Message
-      "UnEnhancing Completed! Thank you for downloading <b>"+ini_get("rom_name")+
-	  "</b>. Press Next to continue else Save logs if you encountred a bug."
-  )
+	"\nUninstall",
+        "<@centre>Unistalling Enhance Experience</@>",
+        "")
 );
+endif;
 
 checkbox(
   "",
