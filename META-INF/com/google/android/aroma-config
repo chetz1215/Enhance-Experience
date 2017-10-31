@@ -36,19 +36,6 @@ fontresload( "1", "ttf/DroidSansFallback.ttf;", "14" );
 
 theme("material_red");
 
-viewbox(
-    "Welcome!",
-    "\nYou are about to Install <b>"+
-	  ini_get("rom_name")+
-	"</b> for <b>"+ini_get("rom_device")+"</b>.\n\n"+
-    "<b> Enhance Experience - Enhance your custom ROM experience, bascially removes your LOS apps and replaces them with Google apps with some little extra features. You can select what you want to delete and what to install during installtion.</b>"+
-      "  VERSION\t\t: <b><#selectbg_g>"+ini_get("rom_version")+"</#></b>\n"+
-      "  UPDATED\t\t: <b><#selectbg_g>"+ini_get("rom_date")+"</#></b>\n\n\n"+
-    "Press Next",
-    ""
-);
-
-
 agreebox(
   #-- Title
     "Only conditions",
