@@ -55,36 +55,36 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
     delete_recursive("/system/priv-app/GooglePhone");
 endif;
 set_progress(0.40);
-if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1.1") == "1" then
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.1") == "1" then
 	ui_print("deleting LOS messaging");
     delete_recursive("/system/app/messaging");
 endif;
-if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1.2") == "2" then	
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.2") == "2" then	
     ui_print("deleting LOS Calculator");
 	delete_recursive("/system/app/ExactCalculator");
 endif;
-if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1.3") == "3" then
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.3") == "3" then
 	ui_print("deleting LOS Calendar");
     delete_recursive("/system/app/Calendar");
 endif;
-if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1.4") == "4" then
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.4") == "4" then
 	ui_print("deleting LOS Clock");
     delete_recursive("/system/app/DeskClock");
 endif;
-if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1.5") == "5" then
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.5") == "5" then
 	ui_print("deleting LOS dialer");
     delete_recursive("/system/priv-app/Dialer");
 endif;
-if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1.6") == "6" then
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.6") == "6" then
 	ui_print("deleting LOS Music app");
     delete_recursive("/system/app/Eleven");
 	delete_recursive("/system/priv-app/Eleven");
 endif;
-if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1.7") == "7" then
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.7") == "7" then
 	ui_print("deleting PA Music");
     delete_recursive("/system/app/SnapdragonMusic");
 endif;
-if file_getprop("/tmp/aroma-data/deletelist.prop","selected.1.8") == "8" then
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.8") == "8" then
 	ui_print("deleting PA MMS");
     delete_recursive("/system/priv-app/Mms");
 	ui_print("For Paranoid Andoird: Deleting MMS");
