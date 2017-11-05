@@ -4,7 +4,7 @@ img.navbar=navbar
 img.dialog=dialog
 img.dialog.titlebar=dialog_titlebar
 img.progress=progress_empty.9
-img.prograss.fill=progress_full.9
+img.prograss.fill=progress_fill.9
 img.selection=select
 img.selection.push=select_push
 
@@ -56,11 +56,12 @@ color.border          = #dddddd
 color.border_g        = #dddddd
 color.progressglow    = #e6e6e6
 
-
 config.roundsize             = 1
 config.button_roundsize      = 1
 config.window_roundsize      = 1
-config.transition_frame      = 5
+config.transition_frame      = 12
+
+font.big              = etc/font.big
 
 info.themename        = Material
 info.description      = Material Theme for AROMA Installer
