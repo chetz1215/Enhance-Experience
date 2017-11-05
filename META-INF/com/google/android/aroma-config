@@ -36,6 +36,21 @@ fontresload( "1", "ttf/DroidSansFallback.ttf;", "14" );
 
 theme("material_red");
 
+# Welcome
+viewbox(
+  #-- Title
+    "<~welcome.title>",
+  
+  #-- Text
+	"<~welcome.codename>:\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
+	"<~welcome.updated>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
+    "\n\n\n\n"+
+    "<~welcome.next>",
+  
+  #-- Icon
+    "@home"
+);
+
 agreebox(
   #-- Title
     "Only conditions",
