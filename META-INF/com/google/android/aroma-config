@@ -60,43 +60,30 @@ menubox(
       
       "dialog.prop",
       
-      "Changelog",    "<~common.dialog.opt1.desc>",    "@alert",       #-- selected = 1
-      "Credits",    "<~common.dialog.opt2.desc>",    "@help",        #-- selected = 2
-      "About Enhance Experience",    "<~common.dialog.opt3.desc>",    "@assignment"   #-- selected = 3
+      "Changelog",    "To see changelog",    "@alert",       #-- selected = 1
+      "Credits",    "Who helped me to make this mod",    "@help",        #-- selected = 2
+      "About Enhance Experience",    "common.aboutmod.desc",    "@assignment"   #-- selected = 3
   );
  
 if prop("dialog.prop","selected")=="1" then
-    alert(
+    textdialog(
       #-- Title
-        "<~common.alert.title>",
-      #-- Message
-        "<~common.alert.msg>",
-      #-- Icon
-        "@alert",
-      #-- OK Button
-        "<~common.alert.btn>"
+        "<~common.text.dialog>",
+      #-- Text
+        resread("license.txt")
     );
-  endif;
+endif;
   
   
   if prop("dialog.prop","selected")=="2" then
-    if confirm(
-         #-- Title
-           "<~common.confirm.title>",
-         #-- Message
-           "<~common.confirm.msg>",
-         #-- Icon
-           "@help",
-         #-- YES Button
-           "<~common.confirm.yes>",
-         #-- NO Button
-           "<~common.confirm.no>"
-       )=="yes"
-    then
-      back("1");  #-- Return to Dialog Demo Menu
-    endif;
+    textdialog(
+      #-- Title
+        "<~common.text.dialog>",
+      #-- Text
+        resread("license.txt")
+    );
   endif;
-  
+
   
   if prop("dialog.prop","selected")=="3" then
     textdialog(
