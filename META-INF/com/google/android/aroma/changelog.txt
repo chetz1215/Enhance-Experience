@@ -1,1 +1,9 @@
-1) Aroma zip in action! 
+Version: 14.5
+
+1- Added view box 
+
+2- Added information tab to see Changelog, Credits and About Mod.
+
+3- Added texts to show when clicked on those 3 respective tabs.
+
+4- 
