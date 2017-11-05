@@ -51,7 +51,20 @@ viewbox(
     "@home"
 );
 
-
+menubox(
+      "",
+      
+      "Select what you want to see.",
+      
+      "@alert",
+      
+      "dialog.prop",
+      
+      "Changelog",    "<~common.dialog.opt1.desc>",    "@alert",       #-- selected = 1
+      "Credits",    "<~common.dialog.opt2.desc>",    "@help",        #-- selected = 2
+      "About Enhance Experience",    "<~common.dialog.opt3.desc>",    "@assignment"   #-- selected = 3
+  );
+  
 
 
 menubox(
