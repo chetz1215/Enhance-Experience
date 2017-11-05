@@ -10,7 +10,7 @@ img.selection.push=select_push
 
 img.button=button_rest
 img.button.focus=button_focus
-img.button.push=button_press
+img.button.push=button_primary_raised.9
 
 img.checkbox=cb
 img.checkbox.focus=cb_sel
