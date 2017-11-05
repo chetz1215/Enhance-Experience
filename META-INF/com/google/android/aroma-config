@@ -51,25 +51,8 @@ viewbox(
     "@home"
 );
 
-agreebox(
-  #-- Title
-    "Only conditions",
-  
-  #-- Subtitle / Description
-    "Please read it before proceeding futher on installtion",
-  
-  #-- Icon
-    "@license",
-  
-  #-- Text Content ( Read from <AROMA Resource Dir>/license.txt )
-    resread("license.txt"),
-  
-  #-- Checkbox Text
-    "I have read it",
-  
-  #-- Unchecked Alert Message
-    "bruh first check on that checkbox"
-);
+
+
 
 menubox(
 	  "",
