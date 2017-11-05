@@ -68,9 +68,9 @@ menubox(
 if prop("dialog.prop","selected")=="1" then
     textdialog(
       #-- Title
-        "<~common.text.dialog>",
+        "CHANGELOG",
       #-- Text
-        resread("license.txt")
+        resread("changelog.txt")
     );
 endif;
   
