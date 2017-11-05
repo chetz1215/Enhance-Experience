@@ -107,9 +107,7 @@ if prop("dialog.prop","selected")=="1" then
     );
   endif;
   
-  back("1");  #-- Return to Dialog Demo Menu
-endif;
-
+  
 menubox(
 	  "",
 	  "Select Your android Version",
