@@ -78,9 +78,9 @@ endif;
   if prop("dialog.prop","selected")=="2" then
     textdialog(
       #-- Title
-        "<~common.text.dialog>",
+        "CREDITS",
       #-- Text
-        resread("license.txt")
+        resread("credits.txt")
     );
   endif;
 
@@ -88,9 +88,9 @@ endif;
   if prop("dialog.prop","selected")=="3" then
     textdialog(
       #-- Title
-        "<~common.text.dialog>",
+        "ABOUT MOD ",
       #-- Text
-        resread("license.txt")
+        resread("aboutmodt.xt")
     );
   endif;
   
