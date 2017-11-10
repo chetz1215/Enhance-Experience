@@ -16,10 +16,10 @@
 # It's Made by chetan_1215 kindly don't steal any stuffs! Ask my permissions!
 
 ini_set("rom_name",			"Enhance Experience");
-ini_set("rom_version",		"v14.1");
+ini_set("rom_version",		"v14.2");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 6.0+");
-ini_set("rom_date",			"05/11/2017");
+ini_set("rom_date",			"10/11/2017");
 ini_set("force_colorspace", "rgba");
 ##
 
@@ -34,7 +34,14 @@ splash(
 fontresload( "0", "ttf/DroidSansFallback.ttf;", "12" );
 fontresload( "1", "ttf/DroidSansFallback.ttf;", "14" );
 
-theme("material_red");
+selectbox(
+                  "Theme",
+				  "Select any theme",
+				  "@style",
+				  "theme.prop",
+				  
+                  "Red theme",         "Normal Red theme which was used in earlier versions" ,    1,                   #-- selected.0 = 1
+				  "Indigo theme",      "New vector graphics enabled theme. Can cause some issues"  0            #-- selected.0 = 2
 
 # Welcome
 viewbox(
