@@ -142,6 +142,7 @@ setvar("retstatus",
         "<@centre>Unistalling Enhance Experience</@>",
         "")
 );
+ini_set("text_next", "Finish");
 endif;
 
 checkbox(
