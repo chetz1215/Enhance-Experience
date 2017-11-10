@@ -40,8 +40,8 @@ selectbox(
 				  "@style",
 				  "theme.prop",
 				  
-                  "Red theme",         "Normal Red theme which was used in earlier versions" ,    1,                   #-- selected.0 = 1
-				  "Indigo theme",      "New vector graphics enabled theme. Can cause some issues",  0            #-- selected.0 = 2
+                  "Red theme",         "Normal Red theme which was used in earlier versions. Cause cause visual glitches." ,    1,                   #-- selected.0 = 1
+				  "Indigo theme",      "New vector graphics enabled theme. ",  0            #-- selected.0 = 2
 );
 
 if prop("theme.prop","selected.0")=="1" then
@@ -58,8 +58,10 @@ viewbox(
     "<~welcome.title>",
   
   #-- Text
-	"<~welcome.codename>:\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
-	"<~welcome.updated>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
+	"<~MOD>:\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
+	"<~Version>:\t<b><#selected_g>"+ini_get("rom_version")+"</b></#>\n"+
+	"<~Update Date>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
+	"<~Author>:\t <b><#selectbg_g>" +ini_get("rom_author")+ "</b></#>\n"+
     "\n\n\n\n"+
     "<~welcome.next>",
   
