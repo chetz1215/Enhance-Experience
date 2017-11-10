@@ -30,6 +30,14 @@ if file_getprop("/tmp/aroma-data/device.prop","selected") == "3" then
 	ui_print("Selected: 6.0 device");
 	package_extract_dir("chetan/Android/6.0", "/sdcard");
 endif;
+
+if file_getprop("tmp/aroma-data/theme.prop","selected.1") == "1" then
+    theme("material_red");
+endif;
+if file_getprop("tmp/aroma-data/theme.prop"."selected.2") == "2" then
+   theme("materialize_indigo");
+endif;
+
 if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "1" then
     ui_print("Performing some calculations...");
 	ui_print("checking aroma data...");
