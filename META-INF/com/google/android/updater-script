@@ -118,7 +118,7 @@ if file_getprop("/tmp/aroma-data/apps.prop","item.1.5") == "1" then
 endif;
 
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.6") == "1" then
-	ui_print("Extracting Sony Music");
+	ui_print("Extracting Google Contact");
 	package_extract_dir("chetan/Apps/GoogleContact", "/system");
 endif;
 
@@ -136,7 +136,7 @@ if file_getprop("/tmp/aroma-data/apps.prop","item.1.9") == "1" then
 	ui_print("Extracting Unlock Sound Effect");
 	package_extract_dir("chetan/Sounds/Unlock Effect", "/system");
 endif;
-set_progress(0.80);
+
 if file_getprop("/tmp/aroma-data/misc.prop","item.1.1") == "1" then
 	ui_print("Executing default files");
 	package_extract_dir("chetan/etc/default", "/system");
@@ -168,6 +168,13 @@ if file_getprop("/tmp/aroma-data/misc.prop","item.1.6") == "1" then
 	ui_print("Optimizng boot speed");
     package_extract_dir("chetan/optz", "/system");
 endif;
-set_progress(0.90);
+
+ui_print("@Unmounting Partitions");
+ui_print(" ");
+run_program("/tmp/aroma/sleep","1000");
+set_progress(0.80);
+run_program("/tmp/aroma/sleep","300");
+ui_print("  * Unmounting /system");
+set_progress(0.80);
 run_program("/sbin/busybox", "umount", "/system");
 set_progress(1.0);
