@@ -125,15 +125,20 @@ endif;
 
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.6") == "1" then
 	ui_print("Extracting Sony Music");
-	package_extract_dir("chetan/Apps/SonyMusic", "/system");
+	package_extract_dir("chetan/Apps/GoogleContact", "/system");
 endif;
 
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.7") == "1" then
+	ui_print("Extracting Sony Music");
+	package_extract_dir("chetan/Apps/SonyMusic", "/system");
+endif;
+
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.8") == "1" then
 	ui_print("Extracting Lock Sound Effect");
 	package_extract_dir("chetan/Sounds/Lock Effect", "/system");
 endif;
 
-if file_getprop("/tmp/aroma-data/apps.prop","item.1.8") == "1" then
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.9") == "1" then
 	ui_print("Extracting Unlock Sound Effect");
 	package_extract_dir("chetan/Sounds/Unlock Effect", "/system");
 endif;
