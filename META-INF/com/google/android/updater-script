@@ -63,55 +63,68 @@ if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.1") == "1" then
 endif;
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.2") == "1" then	
     ui_print("deleting LOS Calculator app");
+	set_progress(0.40);
 	delete_recursive("/system/app/ExactCalculator");
 endif;
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.3") == "1" then
 	ui_print("deleting LOS Calendar app");
+	set_progress(0.40);
     delete_recursive("/system/app/Calendar");
 endif;
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.4") == "1" then
 	ui_print("deleting LOS Clock app");
+	set_progress(0.40);
     delete_recursive("/system/app/DeskClock");
 endif;
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.5") == "1" then
 	ui_print("deleting LOS dialer app");
+	set_progress(0.40);
     delete_recursive("/system/priv-app/Dialer");
 endif;
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.6") == "1" then
 	ui_print("deleting LOS Music app");
+	set_progress(0.40);
     delete_recursive("/system/app/Eleven");
 	delete_recursive("/system/priv-app/Eleven");
 endif;
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.7") == "1" then
 	ui_print("deleting LOS Contacts app");
+	set_progress(0.40);
     delete_recursive("/system/priv-app/Contacts");
 endif;
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.8") == "1" then
 	ui_print("deleting PA Music");
+	set_progress(0.40);
     delete_recursive("/system/app/SnapdragonMusic");
 endif;
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.9") == "1" then
 	ui_print("deleting PA MMS");
+	set_progress(0.40);
     delete_recursive("/system/priv-app/Mms");
 	ui_print("For Paranoid Andoird: Deleting MMS");
 endif;
+#########################
 set_progress(0.60);
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.1") == "1" then
 	ui_print("Extracting Android Messages");
 	package_extract_dir("chetan/Apps/AndroidMessages", "/system");
 endif;
+
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.2") == "1" then
 	ui_print("Extracting Google Calculator");
 	package_extract_dir("chetan/Apps/GoogleCalculator", "/system");
 endif;
+
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.3") == "1" then
 	ui_print("Extracting Google Calendar");
 	package_extract_dir("chetan/Apps/GoogleCalendar", "/system");
 endif;
+
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.4") == "1" then
 	ui_print("Extracting Google Clock");
 	package_extract_dir("chetan/Apps/GoogleClock", "/system");
 endif;
+
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.5") == "1" then
 	ui_print("Extracting Google Phone");
 	package_extract_dir("chetan/Apps/dialer", "/system");
@@ -174,7 +187,7 @@ ui_print(" ");
 run_program("/tmp/aroma/sleep","1000");
 set_progress(0.80);
 run_program("/tmp/aroma/sleep","300");
-ui_print("  * Unmounting /system");
+ui_print(" Unmounting /system");
 set_progress(0.80);
 run_program("/sbin/busybox", "umount", "/system");
 set_progress(1.0);
