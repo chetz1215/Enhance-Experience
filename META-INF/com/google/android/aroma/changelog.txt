@@ -1,4 +1,4 @@
-Version: 14.5
+<b><#selectbg_g>EX-V14.3</#></b>
 
 1- Added view box 
 
@@ -6,4 +6,10 @@ Version: 14.5
 
 3- Added texts to show when clicked on those 3 respective tabs.
 
-4- 
+4- Added New theme.
+
+5- Added Transparent White icons.
+
+6- Added Google contacts to install/ uninstall.
+
+7- Many consmetic and other bugs fixes.
