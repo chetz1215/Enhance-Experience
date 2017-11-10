@@ -108,7 +108,7 @@ endif;
       #-- Title
         "ABOUT MOD ",
       #-- Text
-        resread("aboutmodt.xt")
+        resread("aboutmod.txt")
     );
   endif;
   
