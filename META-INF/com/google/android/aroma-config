@@ -146,8 +146,10 @@ checkbox(
 	"Clock","Stock lineageos Clock app.",0,
 	"Phone","Stock lineageos Phone app.",0,
 	"Eleven","Stock lineageos Music app.",0,
+	"Contacts","Stock LOS Contact app",0,
 	"Snapdragon Music","Paranoid Android: Music app.",0,
 	"MMS","Paranoid Android: Messaging app.", 0
+	
          
 );
 checkbox(
@@ -162,6 +164,7 @@ checkbox(
 	"Google Calendar","",0,
 	"Google Clock","",0,
 	"Google Phone","",0,
+	"Google Contacts","",0,
 	"Sony Music","",0,
 	"Screen Lock sound effect","",0,
 	"Screen Unlock sound effect","",0
