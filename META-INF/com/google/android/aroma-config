@@ -19,7 +19,7 @@ ini_set("rom_name",			"Enhance Experience");
 ini_set("rom_version",		"v14.3");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 6.0+");
-ini_set("rom_date",			"10/11/2017");
+ini_set("rom_date",			"11/11/2017");
 ini_set("force_colorspace", "rgba");
 ##
 
@@ -40,7 +40,7 @@ selectbox(
 				  "@style",
 				  "theme.prop",
 				  
-                  "Red theme",         "Normal Red theme which was used in earlier versions. Cause cause visual glitches." ,    1,                   #-- selected.0 = 1
+                  "Red theme",         "Normal Red theme which was used in earlier versions. Can cause visual glitches." ,    1,                   #-- selected.0 = 1
 				  "Indigo theme",      "New vector graphics enabled theme. ",  0            #-- selected.0 = 2
 );
 
@@ -55,7 +55,7 @@ endif;
 # Welcome
 viewbox(
   #-- Title
-    "<~welcome.title>",
+    "WELCOME!",
   
   #-- Text
 	"<~MOD>:\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
@@ -63,7 +63,7 @@ viewbox(
 	"<~Update Date>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
 	"<~Author>:\t <b><#selectbg_g>" +ini_get("rom_author")+ "</b></#>\n"+
     "\n\n\n\n"+
-    "<~welcome.next>",
+    "Press next to continue.",
   
   #-- Icon
     "@home"
@@ -74,13 +74,13 @@ menubox(
       
       "Select what you want to see.",
       
-      "@alert",
+      "@security",
       
       "dialog.prop",
       
-      "Changelog",    "To see changelog",    "@alert",       #-- selected = 1
-      "Credits",    "Who helped me to make this mod",    "@help",        #-- selected = 2
-      "About Enhance Experience",    "common.aboutmod.desc",    "@assignment"   #-- selected = 3
+      "Changelog",    "To see changelog",    "@pen",       #-- selected = 1
+      "Credits",    "Who helped me to make this mod",    "@pan_tool",        #-- selected = 2
+      "About Enhance Experience",    "common.aboutmod.desc",    "@android"   #-- selected = 3
   );
  
 if prop("dialog.prop","selected")=="1" then
