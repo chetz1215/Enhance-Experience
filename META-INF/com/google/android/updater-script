@@ -46,9 +46,9 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
 	ui_print("@Uninstalling");
 		ui_print("deleting android messages...");
     delete_recursive("/system/app/AndroidMessages");
-		ui_print("deleting Google Calculator...");
+		ui_print("deleting Google calculator...");
     delete_recursive("/system/app/GoogleCalculator");
-		ui_print("deleteing Google Calendar...");
+		ui_print("deleteing Google calendar...");
     delete_recursive("/system/app/GoogleCalendar");
 		ui_print("deleting Google clock...");
     delete_recursive("/system/app/GoogleClock");
@@ -56,7 +56,8 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
     delete_recursive("/system/app/SonyMusic");
 		ui_print("deleting Google phone...");
     delete_recursive("/system/priv-app/GooglePhone");
-endif;
+                ui_print("deleting Google contacts...");
+    delete_recursive("/system/priv-app/GoogleContacts");
 
 set_progress(0.40);
 ui_print("@Removing Selected Apps");
