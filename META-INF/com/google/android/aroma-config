@@ -143,7 +143,10 @@ setvar("retstatus",
         "")
 );
 ini_set("text_next", "Finish");
+
+#---- FINISH
 endif;
+
 
 checkbox(
   "",
