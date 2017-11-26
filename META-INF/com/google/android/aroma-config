@@ -45,7 +45,7 @@ viewbox(
   
   #-- Text
 	"<~MOD>:\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
-	"<~Version>:\t<b><#selected_g>"+ini_get("rom_version")+"</b></#>\n"+
+	"<~Version>:\t <b><#selected_g>"+ini_get("rom_version")+"</b></#>\n"+
 	"<~Update Date>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
 	"<~Author>:\t <b><#selectbg_g>" +ini_get("rom_author")+ "</b></#>\n"+
     "\n\n\n\n"+
@@ -58,15 +58,13 @@ viewbox(
 menubox(
       "Info",
       
-      "Select what you want to see.",
-      
-      "@security",
-      
+      "Select what you want to see.",      
+      "@security",      
       "dialog.prop",
       
       "Changelog",                 "To see changelog",                      "@pen",             #-- selected = 1
       "Credits",                   "Who helped me to make this mod",        "@pan_tool",        #-- selected = 2
-      "About Enhance Experience",  "common.aboutmod.desc",                  "@android"          #-- selected = 3
+      "About Enhance Experience",  "About MOD",                             "@android"          #-- selected = 3
   );
  
 if prop("dialog.prop","selected")=="1" then
@@ -150,8 +148,8 @@ menubox(
 endif;
 
 checkbox(
-  "",
-  "Uninstall Stock Apps",
+  "Delete LOS apps",
+  "Uninstall",
   "icons/apps",
   "deletelist.prop",	
 	
@@ -169,7 +167,7 @@ checkbox(
          
 );
 checkbox(
-  "",
+  "Install",
   "Installation",
   "icons/apps",
   "apps.prop",	
@@ -187,12 +185,12 @@ checkbox(
 );
 	
 checkbox(
-  "",
-  "MISC",
+  "Misc",
+  "MISC And Files to work with apps",
   "icons/code",
   "misc.prop",	
 	
-  	"Esseintial files,MISC","",                              2, #-- Group 1
+  	"Esseintial files & MISC","",                                   2, #-- Group 1
 	"default permissions","For settings required permissions.",0,
 	"pref apps","Making messages and some other apps as preffered.",0,
     "permissions","To set folder premissions for apps.",0,
