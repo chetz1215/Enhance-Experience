@@ -34,23 +34,9 @@ splash(
 fontresload( "0", "ttf/DroidSansFallback.ttf;", "12" );
 fontresload( "1", "ttf/DroidSansFallback.ttf;", "14" );
 
-selectbox(
-                  "Theme",
-				  "Select any theme",
-				  "@style",
-				  "theme.prop",
-				  
-                  "Red theme",         "Normal Red theme which was used in earlier versions. Can cause visual glitches." ,    1,                   #-- selected.0 = 1
-				  "Indigo theme",      "New vector graphics enabled theme. ",  0            #-- selected.0 = 2
-);
 
-if prop("theme.prop","selected.0")=="1" then
-  theme("material_red");
-endif;
+theme("materialize_indigo");                 #-- Set default theme as indigo
 
-if prop("theme.prop","selected.0")=="2" then
-  theme("materialize_indigo");
-endif;
 
 # Welcome
 viewbox(
