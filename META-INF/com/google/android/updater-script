@@ -198,13 +198,13 @@ ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.8") == "1" then
 	ui_print("@Lock Sound Effect");
 	ui_print("- Replacing Lock Sound effect ");
-	package_extract_dir("chetan/Sounds/Lock Effect", "/system");
+	package_extract_dir("chetan/Sounds/Lock-Effect", "/system");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.9") == "1" then
 	ui_print("@Unlock Sound Effect");
 	ui_print("- Replacing Unlock Sound effect ");
-	package_extract_dir("chetan/Sounds/Unlock Effect", "/system");
+	package_extract_dir("chetan/Sounds/Unlock-Effect", "/system");
 endif;
 set_progress(0.80);
 if file_getprop("/tmp/aroma-data/misc.prop","item.1.1") == "1" then
