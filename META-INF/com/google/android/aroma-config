@@ -56,7 +56,7 @@ viewbox(
 );
 
 menubox(
-      "",
+      "Info",
       
       "Select what you want to see.",
       
@@ -64,9 +64,9 @@ menubox(
       
       "dialog.prop",
       
-      "Changelog",    "To see changelog",    "@pen",       #-- selected = 1
-      "Credits",    "Who helped me to make this mod",    "@pan_tool",        #-- selected = 2
-      "About Enhance Experience",    "common.aboutmod.desc",    "@android"   #-- selected = 3
+      "Changelog",                 "To see changelog",                      "@pen",             #-- selected = 1
+      "Credits",                   "Who helped me to make this mod",        "@pan_tool",        #-- selected = 2
+      "About Enhance Experience",  "common.aboutmod.desc",                  "@android"          #-- selected = 3
   );
  
 if prop("dialog.prop","selected")=="1" then
@@ -100,39 +100,54 @@ endif;
   
   
 menubox(
-	  "",
+	  "Android Version",
 	  "Select Your android Version",
 	  "icons/update",
 	  "device.prop",
 
-	  "8.0  ",	            	   "Oreo",	                     "@android-o",         	   #-- selected = 1
-	  "7.0+ ",	        	       "Nougat",	                 "@android-n",             #-- selected = 2
-	  "6.0+ ",        			   "Marshmallow",			     "@android-m"              #-- selected = 3 							
+	  "8.0  ",	             "Oreo",	               "@android-o",         	 #-- selected = 1
+	  "7.0+ ",	             "Nougat",	               "@android-n",             #-- selected = 2
+	  "6.0+ ",        	     "Marshmallow",            "@android-m"              #-- selected = 3 							
 );
 
 selectbox(
-         "",
+                 "",
 		 "Choose between them",
 		 "icons/update",
 		 "flash.prop",
 		 
-		 "Install or Unistall", "", 2,                                                  #-- Group 1. key = "selected.1"
-		 "Install Enhance Experience", "Enhance your phone", 1,                                #-- selected.1 = 1
-		 "Uninstall Enhance Experience","UnEnhance your phone", 0                             #-- selected.1 = 2
+		 "Install or Unistall", "", 2,                                            #-- Group 1. key = "selected.1"
+		 "Install Enhance Experience", "Enhance your phone", 1,                   #-- selected.1 = 1
+		 "Uninstall Enhance Experience","UnEnhance your phone", 0                 #-- selected.1 = 2
 ); 
 
-if prop("flash.prop","selected.1") == "2" then
+
+if prop("flash.prop","selected.1")=="2" then
 setvar("retstatus",
   install(
 	"\nUninstall",
         "<@centre>Unistalling Enhance Experience</@>",
         "")
 );
+
+
 ini_set("text_next", "Finish");
 
 #---- FINISH
 endif;
 
+
+if prop("flash.prop","selected.1") == "1" then
+menubox(
+             "Clean or Dirty flash?",
+             "Choose between them",
+             "icons/update",
+             "cleandirty.prop", 
+             
+             "Clean Flash", "Mostly required when main version bump",      "@android",             #-- selected.0 = 1
+             "Dirty flash", "",                                            "@android"              #-- selected.0 = 2
+);
+endif;
 
 checkbox(
   "",

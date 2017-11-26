@@ -34,6 +34,24 @@ if file_getprop("/tmp/aroma-data/device.prop","selected") == "3" then
 	package_extract_dir("chetan/Android/6.0", "/sdcard");
 endif;
 
+if file_getprop("/tmp/aroma-data/cleandirty.prop","selected") == "1" then
+    ui_print("@Selected: Clean flash");
+	ui_print("- Preparing mod to delete files");
+	ui_print(" ");
+	delete_recursive("/system/app/AndroidMessages");
+    delete_recursive("/system/app/GoogleCalculator");
+    delete_recursive("/system/app/GoogleCalendar");
+    delete_recursive("/system/app/GoogleClock");
+    delete_recursive("/system/app/SonyMusic");
+    delete_recursive("/system/priv-app/GooglePhone");
+	ui_print("- Cleaning system data");
+endif;
+if file_getprop("tmp/aroma-data/cleandirty.prop","selected") == "2" then
+    ui_print("@Selected: Dirty flash");
+	ui_print("- Preparing mod");
+endif;
+# basically do nothing and skip to next part
+##################################################
 if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "1" then
     ui_print("@Performing calculations");
 	ui_print("Checking aroma data...");
@@ -61,6 +79,8 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
 		ui_print("deleting Google phone...");
     delete_recursive("/system/priv-app/GooglePhone");
 endif;
+
+
 #####################################
 set_progress(0.40);
 delete_recursive("/system/priv-app/GooglePhone");
