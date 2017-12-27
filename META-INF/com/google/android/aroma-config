@@ -16,10 +16,10 @@
 # It's Made by chetan_1215 kindly don't steal any stuffs! Ask my permissions!
 
 ini_set("rom_name",			"Enhance Experience");
-ini_set("rom_version",		"v15.1");
+ini_set("rom_version",		"v15.5");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 6.0+");
-ini_set("rom_date",			"19/11/2017");
+ini_set("rom_date",			"26/11/2017");
 ini_set("force_colorspace", "rgba");
 ##
 
