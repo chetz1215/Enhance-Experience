@@ -10,4 +10,8 @@ Thanks to...
 
 5- <b><#selectbg_g>LineageOS</#></b> for a standard support base.
 
-6- <b><#selectbg_g>chetz1215</#></b> for making this mod.
+6- <b><#selectbg_g>Martin.077</#></b> for google phone bubble patched .apk.
+
+7- <b><#selectbg_g>chetz1215</#></b> for making this mod.
+
+

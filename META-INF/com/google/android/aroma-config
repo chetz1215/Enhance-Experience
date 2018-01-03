@@ -45,7 +45,7 @@ viewbox(
   
   #-- Text
 	"<~MOD>:\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
-	"<~Version>:\t <b><#selected_g>"+ini_get("rom_version")+"</b></#>\n"+
+	"<~Version>:\t <b><#selected_g>" +ini_get("rom_version")+"</b></#>\n"+
 	"<~Update Date>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
 	"<~Author>:\t <b><#selectbg_g>" +ini_get("rom_author")+ "</b></#>\n"+
     "\n\n\n\n"+
@@ -166,6 +166,8 @@ checkbox(
 	
          
 );
+endif
+
 checkbox(
   "Install",
   "Installation",

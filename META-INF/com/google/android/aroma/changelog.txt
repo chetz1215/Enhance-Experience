@@ -1,15 +1,9 @@
-<b><#selectbg_g>EX-V14.3</#></b>
+<b><#selectbg_g>EX-V15.1</#></b>
 
-1- Added view box 
+1- Updated apps.
 
-2- Added information tab to see Changelog, Credits and About Mod.
+2- Removed duplicates, conflicting files.
 
-3- Added texts to show when clicked on those 3 respective tabs.
+3- Fixed texts over some places.
 
-4- Added New theme.
-
-5- Added Transparent White icons.
-
-6- Added Google contacts to install/ uninstall.
-
-7- Many consmetic and other bugs fixes.
+maintaince update!
