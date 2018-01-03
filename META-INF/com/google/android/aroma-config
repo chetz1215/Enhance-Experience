@@ -166,7 +166,7 @@ checkbox(
 	
          
 );
-endif
+
 
 checkbox(
   "Install",
