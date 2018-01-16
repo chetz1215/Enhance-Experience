@@ -45,10 +45,10 @@ viewbox(
     "WELCOME!",
   
   #-- Text
-	"<~MOD>:\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
-	"<~MOD>:\t <b><#selectbg_g>" +ini_get("rom_version")+ "</b></#>\n"+
+	"<~MOD>:\t\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
+	"<~MOD>:\t\t <b><#selectbg_g>" +ini_get("rom_version")+ "</b></#>\n"+
 	"<~Update Date>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
-	"<~Author>:\t <b><#selectbg_g>" +ini_get("rom_author")+ "</b></#>\n"+
+	"<~Author>:\t\t <b><#selectbg_g>" +ini_get("rom_author")+ "</b></#>\n"+
     "\n\n\n\n"+
     "Press next to continue.",
   
@@ -144,7 +144,7 @@ menubox(
 	  "icons/update",
 	  "device.prop",
 
-	  "8.0  ",	             "Oreo",	               "@android-o",         	 #-- selected = 1
+	  "8.0+  ",	             "Oreo",	               "@android-o",         	 #-- selected = 1
 	  "7.0+ ",	             "Nougat",	               "@android-n",             #-- selected = 2
 	  "6.0+ ",        	     "Marshmallow",            "@android-m"              #-- selected = 3 							
 );
@@ -176,17 +176,17 @@ ini_set("text_next", "Finish");
 endif;
 
 
-if prop("flash.prop","selected.1") == "1" then
 menubox(
              "Clean or Dirty flash?",
              "Choose between them",
              "icons/update",
              "cleandirty.prop", 
              
-             "Clean Flash", "Mostly required when main version bump",      "@android",             #-- selected.0 = 1
-             "Dirty flash", "",                                            "@android"              #-- selected.0 = 2
+             "Dirty Flash", "You know it.",                                              "@android",             #-- selected = 1
+             "Clean flash","Mostly required when a version bump or new rom.",            "@android"              #-- selected = 2
 );
-endif;
+
+if prop("cleandirty.prop","selected") == "2" then
 
 checkbox(
   "Delete LOS apps",
@@ -195,10 +195,10 @@ checkbox(
   "deletelist.prop",	
 	
   	"Select which Apps to delete","",                              2, #-- Group 1
-	"Messaging","Stock lineageos Messaging app.",1,
-	"Calculator","Stock lineageos Calculator app.",1,
-	"Calendar","Stock lineageos Calendar app.",2,
-	"Clock","Stock lineageos Clock app.",2,
+	"Messaging","Stock lineageos Messaging app.",0,
+	"Calculator","Stock lineageos Calculator app.",0,
+	"Calendar","Stock lineageos Calendar app.",0,
+	"Clock","Stock lineageos Clock app.",0,
 	"Phone","Stock lineageos Phone app.",0,
 	"Eleven","Stock lineageos Music app.",0,
 	"Contacts","Stock LOS Contact app",0,
@@ -207,7 +207,7 @@ checkbox(
 	
          
 );
-
+endif;
 
 checkbox(
   "Install",
@@ -216,17 +216,18 @@ checkbox(
   "apps.prop",	
 	
   	"Select which Apps to install","",                              2, #-- Group 1
-	"AndroidMessages","",0,
-	"Google Calculator","",0,
-	"Google Calendar","",0,
-	"Google Clock","",0,
-	"Google Phone","",0,
-	"Google Contacts","",0,
-	"Sony Music","",0,
-	"Screen Lock sound effect","",0,
-	"Screen Unlock sound effect","",0
+	"AndroidMessages","Updated to: 2.8.040. From: 2.5.212",0,
+	"Google Calculator","Current: 7.4.1",0,
+	"Google Calendar","Updated to: 5.8.11. From: 5.8.9",0,
+	"Google Clock","Current: 5.2",0,
+	"Google Phone","Current: 15.0.179075669",0,
+	"Google Contacts","Current: 2.4.4.17",0,
+	"Sony Music","Updated to:9.3.12.A.3.0. From: 9.3.11.A.1.0",0,
+	"Screen Lock sound effect","Current: 1.0",0,
+	"Screen Unlock sound effect","Current: 1.0",0
 );
-	
+
+
 checkbox(
   "Misc",
   "MISC And Files to work with apps",
@@ -236,7 +237,7 @@ checkbox(
   	"Esseintial files & MISC","",                                   2, #-- Group 1
 	"default permissions","For settings required permissions.",0,
 	"pref apps","Making messages and some other apps as preffered.",0,
-    "permissions","To set folder premissions for apps.",0,
+    "permissions","To set folder premissions for apps.",1,
 	"Google Phone Framework","Please select this if you'll install google phone.",0,
 	"Make Google phone default phone app","If you don't want do to this manually, check here.",0,
 	"Optimize for faster boot","So far works with only android 8.0",0
