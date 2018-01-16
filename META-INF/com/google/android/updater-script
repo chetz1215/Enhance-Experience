@@ -17,13 +17,13 @@ run_program("/sbin/busybox", "mount", "/system");
 set_progress(0.10);
 if file_getprop("/tmp/aroma-data/device.prop","selected") == "1" then
 	ui_print("@Mounting system");
-	ui_print("@Selected: 8.0 device");
+	ui_print("@Selected: 8.0+ device");
 	ui_print(" ");
 	package_extract_dir("chetan/Android/8.0", "/sdcard");
 endif;
 if file_getprop("/tmp/aroma-data/device.prop","selected") == "2" then
 	ui_print("@Mounting system");
-	ui_print("@Selected: 7.0 device");
+	ui_print("@Selected: 7.0+ device");
 	ui_print(" ");
 	package_extract_dir("chetan/Android/7.0", "/sdcard");
 endif;
@@ -35,20 +35,18 @@ if file_getprop("/tmp/aroma-data/device.prop","selected") == "3" then
 endif;
 
 if file_getprop("/tmp/aroma-data/cleandirty.prop","selected") == "1" then
-    ui_print("@Selected: Clean flash");
+    ui_print("@Selected: Dirty flash");
 	ui_print("- Preparing mod to delete files");
+    ui_print("- Deleting files...");
 	ui_print(" ");
-	delete_recursive("/system/app/AndroidMessages");
-    delete_recursive("/system/app/GoogleCalculator");
-    delete_recursive("/system/app/GoogleCalendar");
-    delete_recursive("/system/app/GoogleClock");
-    delete_recursive("/system/app/SonyMusic");
-    delete_recursive("/system/priv-app/GooglePhone");
-	ui_print("- Cleaning system data");
+
 endif;
 if file_getprop("tmp/aroma-data/cleandirty.prop","selected") == "2" then
-    ui_print("@Selected: Dirty flash");
+    ui_print("@Selected: Clean flash");
 	ui_print("- Preparing mod");
+	ui_print("- Deleting files...");
+    ui_print(" ");
+    ui_print("@____Unistalling Selected Stock Apps____");
 endif;
 # basically do nothing and skip to next part
 ##################################################
@@ -57,7 +55,6 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "1" then
 	ui_print("Checking aroma data...");
 	ui_print("Sucesfully founded!");
 	ui_print(" ");
-	ui_print("@____Unistalling Selected Apps____");
 endif;
 set_progress(0.20);
 if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
@@ -76,7 +73,9 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
     delete_recursive("/system/app/GoogleClock");
 		ui_print("deleting Sony Music...");
     delete_recursive("/system/app/SonyMusic");
-		ui_print("deleting Google phone...");
+			ui_print("deleting GoogleContact...");
+    delete_recursive("/system/priv-app/GoogleContact");
+		ui_print("deleting GooglePhone...");
     delete_recursive("/system/priv-app/GooglePhone");
 endif;
 
