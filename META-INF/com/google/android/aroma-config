@@ -20,6 +20,7 @@ ini_set("rom_version",		"v15.5");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 6.0+");
 ini_set("rom_date",		"x/01/2018");
+ini_set("rom_warning",      "IF YOUR CPU SHOWS arm64,Continue");
 ini_set("force_colorspace", "rgba");
 ##
 
@@ -45,7 +46,7 @@ viewbox(
   
   #-- Text
 	"<~MOD>:\t <b><#selectbg_g>" +ini_get("rom_name")+ "</b></#>\n"+
-	"<~Version>:\t <b><#selected_g>" +ini_get("rom_version")+"</b></#>\n"+
+	"<~MOD>:\t <b><#selectbg_g>" +ini_get("rom_version")+ "</b></#>\n"+
 	"<~Update Date>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
 	"<~Author>:\t <b><#selectbg_g>" +ini_get("rom_author")+ "</b></#>\n"+
     "\n\n\n\n"+
@@ -54,6 +55,46 @@ viewbox(
   #-- Icon
     "@home"
 );
+
+ #-- Show Please Wait
+  pleasewait("Get System Informations...");
+
+  #-- Fetch System Information
+  setvar(
+    #-- Variable Name
+      "sysinfo",
+    
+    #-- Variable Value
+      "<@center><b>Continue Only if you have CPU: ARM64 !!</b></@>\n\n"+
+      
+      "Name\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.name")+"</#></b>\n"+
+      "Device Name\t\t: <b><#selectbg_g>"+sysprop("ro.product.device")+"</#></b>\n"+
+      "Board Name\t\t: <b><#selectbg_g>"+sysprop("ro.product.board")+"</#></b>\n"+
+      "Manufacturer\t: <b><#selectbg_g>"+sysprop("ro.product.manufacturer")+"</#></b>\n"+
+      
+      "CPU\t\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.cpu.abi")+"</#></b>\n"+
+      
+      "\n\n\n\n"+
+
+      ""
+  );
+  
+  #-- Show Textbox
+  textbox(
+    #-- Title
+      "System Information",
+    
+    #-- Subtitle
+      "System Information fetched successfully",
+    
+    #-- Icon
+      "@info",
+    
+    #-- Text
+      getvar("sysinfo")
+  );
+
+
 
 menubox(
       "Info",
@@ -154,10 +195,10 @@ checkbox(
   "deletelist.prop",	
 	
   	"Select which Apps to delete","",                              2, #-- Group 1
-	"Messaging","Stock lineageos Messaging app.",0,
-	"Calculator","Stock lineageos Calculator app.",0,
-	"Calendar","Stock lineageos Calendar app.",0,
-	"Clock","Stock lineageos Clock app.",0,
+	"Messaging","Stock lineageos Messaging app.",1,
+	"Calculator","Stock lineageos Calculator app.",1,
+	"Calendar","Stock lineageos Calendar app.",2,
+	"Clock","Stock lineageos Clock app.",2,
 	"Phone","Stock lineageos Phone app.",0,
 	"Eleven","Stock lineageos Music app.",0,
 	"Contacts","Stock LOS Contact app",0,
