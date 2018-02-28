@@ -16,10 +16,10 @@
 # It's Made by chetan_1215 kindly don't steal any stuffs! Ask my permissions!
 
 ini_set("rom_name",			"Enhance Experience");
-ini_set("rom_version",		"v15.5");
+ini_set("rom_version",		"v16.0");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 6.0+");
-ini_set("rom_date",		"x/01/2018");
+ini_set("rom_date",		"28/01/2018");
 ini_set("rom_warning",      "IF YOUR CPU SHOWS arm64,Continue");
 ini_set("force_colorspace", "rgba");
 ##
@@ -32,8 +32,8 @@ splash(
 );
 
 
-fontresload( "0", "ttf/DroidSansFallback.ttf;", "12" );
-fontresload( "1", "ttf/DroidSansFallback.ttf;", "14" );
+fontresload( "0", "ttf/Roboto-Regular.ttf;", "12" );
+fontresload( "1", "ttf/Roboto-Regular.ttf;", "14" );
 
 
 theme("materialize_indigo");                 #-- Set default theme as indigo
@@ -158,8 +158,7 @@ selectbox(
 		 "Install or Unistall", "", 2,                                            #-- Group 1. key = "selected.1"
 		 "Install Enhance Experience", "Enhance your phone", 1,                   #-- selected.1 = 1
 		 "Uninstall Enhance Experience","UnEnhance your phone", 0                 #-- selected.1 = 2
-); 
-
+);
 
 if prop("flash.prop","selected.1")=="2" then
 setvar("retstatus",
@@ -182,8 +181,8 @@ menubox(
              "icons/update",
              "cleandirty.prop", 
              
-             "Dirty Flash", "You know it.",                                              "@android",             #-- selected = 1
-             "Clean flash","Mostly required when a version bump or new rom.",            "@android"              #-- selected = 2
+             "Dirty Flash", "You know it.",                                              "@extension",             #-- selected = 1
+             "Clean flash","Mostly required when a version bump or new rom.",            "@apps"              #-- selected = 2
 );
 
 if prop("cleandirty.prop","selected") == "2" then
@@ -209,6 +208,7 @@ checkbox(
 );
 endif;
 
+
 checkbox(
   "Install",
   "Installation",
@@ -220,7 +220,7 @@ checkbox(
 	"Google Calculator","Current: 7.4.1",0,
 	"Google Calendar","Updated to: 5.8.11. From: 5.8.9",0,
 	"Google Clock","Current: 5.2",0,
-	"Google Phone","Current: 15.0.179075669",0,
+	"Google Phone","Updated to: 16.0.1833. From: 15.0.1790",0,
 	"Google Contacts","Current: 2.4.4.17",0,
 	"Sony Music","Updated to:9.3.12.A.3.0. From: 9.3.11.A.1.0",0,
 	"Screen Lock sound effect","Current: 1.0",0,
@@ -240,6 +240,7 @@ checkbox(
     "permissions","To set folder premissions for apps.",1,
 	"Google Phone Framework","Please select this if you'll install google phone.",0,
 	"Make Google phone default phone app","If you don't want do to this manually, check here.",0,
+	"Bubble For Google phone","Enables Bubble modification in google phone",0,
 	"Optimize for faster boot","So far works with only android 8.0",0
 );
 

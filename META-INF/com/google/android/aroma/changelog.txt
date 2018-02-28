@@ -2,8 +2,10 @@
 
 1- Updated apps.
 
-2- Removed duplicates, conflicting files.
+2- Fixed clean and dirty update.
 
-3- Fixed texts over some places.
+3- Added version no "From" - "Update to".
 
-maintaince update!
+4- Many other fixes.
+
+Base update!

@@ -33,34 +33,20 @@ if file_getprop("/tmp/aroma-data/device.prop","selected") == "3" then
 	ui_print(" ");
 	package_extract_dir("chetan/Android/6.0", "/sdcard");
 endif;
-
-if file_getprop("/tmp/aroma-data/cleandirty.prop","selected") == "1" then
-    ui_print("@Selected: Dirty flash");
-	ui_print("- Preparing mod to delete files");
-    ui_print("- Deleting files...");
-	ui_print(" ");
-
-endif;
-if file_getprop("tmp/aroma-data/cleandirty.prop","selected") == "2" then
-    ui_print("@Selected: Clean flash");
-	ui_print("- Preparing mod");
-	ui_print("- Deleting files...");
-    ui_print(" ");
-    ui_print("@____Unistalling Selected Stock Apps____");
-endif;
-# basically do nothing and skip to next part
-##################################################
+###################3
 if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "1" then
-    ui_print("@Performing calculations");
+    ui_print("@Selected: INSTALL");
+    ui_print("Performing calculations...");
 	ui_print("Checking aroma data...");
 	ui_print("Sucesfully founded!");
 	ui_print(" ");
 endif;
 set_progress(0.20);
 if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
-	ui_print("@performing calculations");
-    ui_print("-Checking aroma-data");
-    ui_print("-Sucesfully founded!");
+	ui_print("@Selected: Uninstall");
+    ui_print("Performing calculations...");
+	ui_print("Checking aroma data...");
+	ui_print("Sucesfully founded!");
 	ui_print(" ");
 	ui_print("@Unistalling");
 		ui_print("deleting android messages...");
@@ -78,8 +64,25 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
 		ui_print("deleting GooglePhone...");
     delete_recursive("/system/priv-app/GooglePhone");
 endif;
+#######
+if file_getprop("/tmp/aroma-data/cleandirty.prop","selected") == "1" then
+    ui_print("@Selected: Dirty flash");
+	ui_print("- Preparing mod to delete files");
+    ui_print("- Deleting files...");
+	ui_print(" ");
+
+endif;
+if file_getprop("tmp/aroma-data/cleandirty.prop","selected") == "2" then
+    ui_print("@Selected: Clean flash");
+	ui_print("- Preparing mod");
+	ui_print("- Deleting files...");
+    ui_print(" ");
+    ui_print("@____Unistalling Selected Stock Apps____");
+	ui_print(" ");
+endif;
 
 
+# basically do nothing and skip to next part
 #####################################
 set_progress(0.40);
 ui_print(" ");
@@ -243,6 +246,12 @@ if file_getprop("/tmp/aroma-data/misc.prop","item.1.5") == "1" then
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/misc.prop","item.1.6") == "1" then
+	ui_print("@Patching Google Phone");
+	ui_print("- Patched ");
+    delete_recursive("/data/data/com.google.android.dialer/shared_prefs/dialer_phenotype_flags.xml");
+    package_extract_dir("chetan/dialer-mod", "/data");
+endif;
+if file_getprop("/tmp/aroma-data/misc.prop","item.1.7") == "1" then
 	ui_print("@Optimizng boot speed");
 	ui_print("- Optimized ");
     package_extract_dir("chetan/optz", "/system");
