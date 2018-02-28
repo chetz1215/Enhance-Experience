@@ -16,7 +16,7 @@
 # It's Made by chetan_1215 kindly don't steal any stuffs! Ask my permissions!
 
 ini_set("rom_name",			"Enhance Experience");
-ini_set("rom_version",		"v16.0");
+ini_set("rom_version",		"v16.1");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 6.0+");
 ini_set("rom_date",		"28/01/2018");
@@ -216,13 +216,13 @@ checkbox(
   "apps.prop",	
 	
   	"Select which Apps to install","",                              2, #-- Group 1
-	"AndroidMessages","Updated to: 2.8.040. From: 2.5.212",0,
+	"AndroidMessages","Updated to: 2.9.051. From: 2.8.040",0,
 	"Google Calculator","Current: 7.4.1",0,
-	"Google Calendar","Updated to: 5.8.11. From: 5.8.9",0,
+	"Google Calendar","Updated to: 5.8.20. From: 5.8.11",0,
 	"Google Clock","Current: 5.2",0,
-	"Google Phone","Updated to: 16.0.1833. From: 15.0.1790",0,
-	"Google Contacts","Current: 2.4.4.17",0,
-	"Sony Music","Updated to:9.3.12.A.3.0. From: 9.3.11.A.1.0",0,
+	"Google Phone","Updated to: 17.0.1866. From: 16.0.1833",0,
+	"Google Contacts","Updated to: 2.5.4.18. From: 2.4.4.17",0,
+	"Sony Music","Updated to: 9.3.12.A.4.2. From: 9.3.12.A.3.0",0,
 	"Screen Lock sound effect","Current: 1.0",0,
 	"Screen Unlock sound effect","Current: 1.0",0
 );
@@ -241,7 +241,7 @@ checkbox(
 	"Google Phone Framework","Please select this if you'll install google phone.",0,
 	"Make Google phone default phone app","If you don't want do to this manually, check here.",0,
 	"Bubble For Google phone","Enables Bubble modification in google phone",0,
-	"Optimize for faster boot","So far works with only android 8.0",0
+	"Optimize for faster boot","So far works with only android 8.1",0
 );
 
 setvar("retstatus",
