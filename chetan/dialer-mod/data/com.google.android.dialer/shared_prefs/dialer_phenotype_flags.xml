@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="G__answer_false_touch_detection_enabled" value="true" />
+    <boolean name="G__force_disable_enriched_call" value="false" />
+    <boolean name="Voip__is_request_call_feedback_allowed" value="false" />
+    <long name="Voip__data_calls_create_hangout_id_timeout_millis_network_type_HSUPA" value="5000" />
+    <boolean name="G__assisted_dialing_enabled" value="false" />
+    <boolean name="G__enable_lightbringer_video_upgrade" value="true" />
+    <boolean name="G__is_nui_shortcut_enabled" value="false" />
+    <boolean name="G__last_tab_enabled" value="true" />
+    <boolean name="G__show_duo_disclosure" value="true" />
+    <long name="Voip__stun_ping_latency_millis_network_type_HSUPA" value="300" />
+    <boolean name="G__config_caller_id_enabled" value="false" />
+    <long name="G__video_share_timeout_millis" value="2147483647" />
+    <boolean name="G__enable_call_log_activate_duo_button" value="false" />
+    <long name="G__postcall_call_duration_threshold" value="7000" />
+    <long name="Voip__stun_ping_latency_millis_network_type_HSPAP" value="300" />
+    <long name="Voip__stun_ping_latency_millis_network_type_HSPA" value="300" />
+    <boolean name="G__enable_return_to_call_bubble_v2" value="true" />
+    <boolean name="G__enable_primes_crash_metric" value="true" />
+    <long name="Scooby__scooby_experiment_id" value="230078" />
+    <string name="Voip__remapped_phone_numbers_carrier_311580">611=+18443907631</string>
+    <boolean name="G__force_enable_duo_video_calls" value="false" />
+    <long name="Voip__data_calls_create_hangout_id_timeout_millis_network_type_HSPAP" value="5000" />
+    <boolean name="Scooby__enable_same_prefix_logging" value="false" />
+    <boolean name="G__enable_primes_memory_metric" value="false" />
+    <boolean name="G__enable_caller_id_and_spam" value="true" />
+    <string name="Voip__wifi_calling_mode_default_value">wifi_calling_mode_value_cell_preferred</string>
+    <boolean name="Voip__should_request_call_feedback_default_value" value="false" />
+    <boolean name="__data_rollout__Scooby.ScoobySpamListExpr230056Rollout__launched__" value="false" />
+    <boolean name="G__vvm_carrier_flag_302220" value="true" />
+    <boolean name="G__enable_primes_timer_metric" value="true" />
+    <boolean name="G__enable_primes" value="true" />
+    <long name="Voip__data_calls_create_hangout_id_timeout_millis_network_type_LTE" value="3000" />
+    <boolean name="G__enable_video_share" value="false" />
+    <string name="__phenotype_server_token">CAESOQDyi0h8L23nbEIJ_cVqrEmG36zHDDeppg4q8Rfwvvly5pus0Yi8vFnFsI-3gnRwNCF85DC1djN9iw</string>
+    <long name="Scooby__spam_interval_for_any_network_job_milliseconds" value="172800000" />
+    <long name="Voip__stun_ping_latency_millis_network_type_HSDPA" value="300" />
+    <long name="Voip__data_calls_create_hangout_id_timeout_millis_network_type_HSPA" value="5000" />
+    <boolean name="G__voicemail_transcription_available" value="false" />
+    <boolean name="G__enable_contacts_suggestions_integration" value="true" />
+    <boolean name="G__p13n_ranker_should_enable" value="false" />
+    <string name="__phenotype_snapshot_token"> com.google.android.dialer 2125496 2 870491921 com.google.android.dialer 870491921</string>
+    <boolean name="G__enable_duo_reachability_query" value="true" />
+    <boolean name="__data_rollout__Scooby.ScoobySpamListIndiaRollout__launched__" value="false" />
+    <boolean name="G__enable_call_log_duo_invite_button" value="false" />
+    <string name="Scooby__spam_server_host">telephonyspamprotect-pa.googleapis.com</string>
+    <boolean name="G__answer_proximity_sensor_enabled" value="false" />
+    <long name="Voip__stun_ping_latency_millis_network_type_LTE" value="200" />
+    <boolean name="G__enable_post_call_prod" value="true" />
+    <long name="Voip__data_calls_create_hangout_id_timeout_millis_network_type_HSDPA" value="5000" />
+    <boolean name="G__enable_new_search_fragment" value="true" />
+    <boolean name="G__enable_after_call_notification" value="true" />
+    <boolean name="G__enable_primes_battery_metric" value="false" />
+    <boolean name="G__enable_return_to_call_bubble" value="false" />
+    <long name="G__percentage_of_spam_notifications_to_show" value="100" />
+    <boolean name="G__enable_dual_alphabets_on_t9" value="true" />
+    <long name="Scooby__spam_interval_for_wifi_job_milliseconds" value="86400000" />
+    <boolean name="G__assisted_dialing_default_precall_state" value="false" />
+    <long name="G__percentage_of_non_spam_notifications_to_show" value="10" />
+    <boolean name="G__enable_call_log_install_duo_button" value="false" />
+    <string name="Voip__remapped_phone_numbers">611=+14049788610/!US,+18448255234=+14049788610/!US</string>
+    <boolean name="G__voicemail_transcription_enabled" value="false" />
+    <boolean name="G__enable_primes_network_metric" value="false" />
+    <long name="G__reverse_lookup_min_version_enabled" value="1" />
+</map>
