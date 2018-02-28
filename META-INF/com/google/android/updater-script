@@ -116,7 +116,7 @@ endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.5") == "1" then
 	ui_print("@LOS dialer");
-	ui_print("- Deleting Clock ");
+	ui_print("- Deleting Phone ");
 	set_progress(0.40);
     delete_recursive("/system/priv-app/Dialer");
 endif;
