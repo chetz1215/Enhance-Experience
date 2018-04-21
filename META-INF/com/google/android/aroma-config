@@ -157,7 +157,8 @@ selectbox(
 		 
 		 "Install or Unistall", "", 2,                                            #-- Group 1. key = "selected.1"
 		 "Install Enhance Experience", "Enhance your phone", 1,                   #-- selected.1 = 1
-		 "Uninstall Enhance Experience","UnEnhance your phone", 0                 #-- selected.1 = 2
+		 "Uninstall Enhance Experience","UnEnhance your phone", 0,                #-- selected.1 = 2
+         "Workaround for bugs","Fixing common problems"                           #-- selected.1 = 3
 );
 
 if prop("flash.prop","selected.1")=="2" then
@@ -174,6 +175,16 @@ ini_set("text_next", "Finish");
 #---- FINISH
 endif;
 
+if prop("flash.prop","selected") == "3" then
+checkbox(
+         "Bugs list",
+         "Fix them",
+         "icons/apps",
+         "bug.prop",
+         
+           "Select the bug you've encountered","",             2, #-- Group 1
+           "Clock Force Closing","0,
+);
 
 menubox(
              "Clean or Dirty flash?",
@@ -182,7 +193,7 @@ menubox(
              "cleandirty.prop", 
              
              "Dirty Flash", "You know it.",                                              "@extension",             #-- selected = 1
-             "Clean flash","Mostly required when a version bump or new rom.",            "@apps"              #-- selected = 2
+             "Clean flash","Mostly required when a version bump or new rom.",            "@apps"                   #-- selected = 2
 );
 
 if prop("cleandirty.prop","selected") == "2" then
@@ -200,9 +211,7 @@ checkbox(
 	"Clock","Stock lineageos Clock app.",0,
 	"Phone","Stock lineageos Phone app.",0,
 	"Eleven","Stock lineageos Music app.",0,
-	"Contacts","Stock LOS Contact app",0,
-	"Snapdragon Music","Paranoid Android: Music app.",0,
-	"MMS","Paranoid Android: Messaging app.", 0
+	"Contacts","Stock LOS Contact app",0
 	
          
 );
