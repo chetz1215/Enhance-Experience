@@ -69,6 +69,20 @@ if file_getprop("/tmp/aroma-data/cleandirty.prop","selected") == "1" then
     ui_print("@Selected: Dirty flash");
 	ui_print("- Preparing mod to delete files");
     ui_print("- Deleting files...");
+	    ui_print("deleting android messages...");
+	delete_recursive("/system/app/AndroidMessages");
+		ui_print("deleting Google Calculator");
+    delete_recursive("/system/app/GoogleCalculator");
+		ui_print("deleteing Google Calendar...");
+    delete_recursive("/system/app/GoogleCalendar");
+		ui_print("deleting Google clock...");
+    delete_recursive("/system/app/GoogleClock");
+		ui_print("deleting Sony Music...");
+    delete_recursive("/system/app/SonyMusic");
+			ui_print("deleting GoogleContact...");
+    delete_recursive("/system/priv-app/GoogleContact");
+		ui_print("deleting GooglePhone...");
+    delete_recursive("/system/priv-app/GooglePhone");
 	ui_print(" ");
 
 endif;
@@ -80,7 +94,6 @@ if file_getprop("tmp/aroma-data/cleandirty.prop","selected") == "2" then
     ui_print("@____Unistalling Selected Stock Apps____");
 	ui_print(" ");
 endif;
-
 
 # basically do nothing and skip to next part
 #####################################
@@ -134,20 +147,6 @@ if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.7") == "1" then
 	ui_print("- Deleting Contacts ");
 	set_progress(0.40);
     delete_recursive("/system/priv-app/Contacts");
-endif;
-ui_print(" ");
-if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.8") == "1" then
-	ui_print("@PA Music");
-	ui_print("- Deleting PA Music ");
-	set_progress(0.40);
-    delete_recursive("/system/app/SnapdragonMusic");
-endif;
-ui_print(" ");
-if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.9") == "1" then
-	ui_print("@PA MMS");
-	ui_print("- Deleting MMS ");
-	set_progress(0.40);
-    delete_recursive("/system/priv-app/Mms");
 endif;
 ui_print(" ");
 ui_print("@____Installing Selected Apps____ ");
