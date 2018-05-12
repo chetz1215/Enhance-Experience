@@ -1,5 +1,0 @@
- Enhance Experience is a Modification which requires TWRP. 
-It basically removes stock LOS apps and adds Google apps, 
-You can choose which apps to remove and which to install by aroma installation.
-
-Visit the website for more detailed info: https://chetzjain1215.wixsite.com/enhancexp
