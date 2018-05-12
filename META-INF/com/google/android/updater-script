@@ -2,14 +2,14 @@ set_progress(0.0);
 ui_print(" ");
 ui_print("--------------------------------------------");
 ui_print(" ");
-ui_print(" E::::::E  E::::::E  ");
-ui_print(" EEEEE   EEEEE       ");
-ui_print(" E          E         ");
-ui_print(" E::::::E  E::::::E  ");
-ui_print(" EEEEE   EEEEE       ");
-ui_print(" E          E         ");
-ui_print(" E::::::E  E::::::E  ");
-ui_print(" EEEEE   EEEEE       ");
+ui_print(" E::::::::::::E    E::::::::::::E  ");
+ui_print(" EEEEE           EEEEE       ");
+ui_print(" E               E         ");
+ui_print(" E::::::E          E::::::E  ");
+ui_print(" EEEEE           EEEEE       ");
+ui_print(" E               E         ");
+ui_print(" E::::::E          E::::::E  ");
+ui_print(" EEEEE           EEEEE       ");
 ui_print(" ");
 ui_print("--------------------------------------------");
 
@@ -58,7 +58,7 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
 		ui_print("deleting Google clock...");
     delete_recursive("/system/app/GoogleClock");
 		ui_print("deleting Sony Music...");
-    delete_recursive("/system/app/SonyMusic");
+    delete_recursive("/system/app/RetroMusic");
 			ui_print("deleting GoogleContact...");
     delete_recursive("/system/priv-app/GoogleContact");
 		ui_print("deleting GooglePhone...");
@@ -69,21 +69,6 @@ if file_getprop("/tmp/aroma-data/cleandirty.prop","selected") == "1" then
     ui_print("@Selected: Dirty flash");
 	ui_print("- Preparing mod to delete files");
     ui_print("- Deleting files...");
-	    ui_print("deleting android messages...");
-	delete_recursive("/system/app/AndroidMessages");
-		ui_print("deleting Google Calculator");
-    delete_recursive("/system/app/GoogleCalculator");
-		ui_print("deleteing Google Calendar...");
-    delete_recursive("/system/app/GoogleCalendar");
-		ui_print("deleting Google clock...");
-    delete_recursive("/system/app/GoogleClock");
-		ui_print("deleting Sony Music...");
-    delete_recursive("/system/app/SonyMusic");
-			ui_print("deleting GoogleContact...");
-    delete_recursive("/system/priv-app/GoogleContact");
-		ui_print("deleting GooglePhone...");
-    delete_recursive("/system/priv-app/GooglePhone");
-	ui_print(" ");
 
 endif;
 if file_getprop("tmp/aroma-data/cleandirty.prop","selected") == "2" then
@@ -91,7 +76,7 @@ if file_getprop("tmp/aroma-data/cleandirty.prop","selected") == "2" then
 	ui_print("- Preparing mod");
 	ui_print("- Deleting files...");
     ui_print(" ");
-    ui_print("@____Unistalling Selected Stock Apps____");
+    ui_print("@____Uninstalling Selected Stock Apps____");
 	ui_print(" ");
 endif;
 
@@ -111,6 +96,7 @@ if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.2") == "1" then
 	ui_print("- Deleting Calculator ");
 	set_progress(0.40);
 	delete_recursive("/system/app/ExactCalculator");
+	
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.3") == "1" then
@@ -118,6 +104,7 @@ if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.3") == "1" then
 	ui_print("- Deleting Calendar ");
 	set_progress(0.40);
     delete_recursive("/system/app/Calendar");
+	
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.4") == "1" then
@@ -125,6 +112,7 @@ if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.4") == "1" then
 	ui_print("- Deleting Clock ");
 	set_progress(0.40);
     delete_recursive("/system/app/DeskClock");
+	
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.5") == "1" then
@@ -132,6 +120,7 @@ if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.5") == "1" then
 	ui_print("- Deleting Phone ");
 	set_progress(0.40);
     delete_recursive("/system/priv-app/Dialer");
+	
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.6") == "1" then
@@ -140,6 +129,7 @@ if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.6") == "1" then
 	set_progress(0.40);
     delete_recursive("/system/app/Eleven");
 	delete_recursive("/system/priv-app/Eleven");
+	
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.7") == "1" then
@@ -147,7 +137,16 @@ if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.7") == "1" then
 	ui_print("- Deleting Contacts ");
 	set_progress(0.40);
     delete_recursive("/system/priv-app/Contacts");
+	
 endif;
+ui_print(" ");
+if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.8") == "1" then
+	ui_print(" Dirty flash: Working! ");
+	ui_print("- Done");
+	set_progress(0.40);
+	
+endif;
+
 ui_print(" ");
 ui_print("@____Installing Selected Apps____ ");
 ##############################
@@ -156,64 +155,61 @@ ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.1") == "1" then
 	ui_print("@Android Messages");
 	ui_print("- Installing Android Messages ");
+	delete_recursive("/system/app/AndroidMessages");
 	package_extract_dir("chetan/Apps/AndroidMessages", "/system");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.2") == "1" then
 	ui_print("@Google Calculator");
 	ui_print("- Installing Google Calculator ");
+	delete_recursive("/system/app/GoogleCalculator");
 	package_extract_dir("chetan/Apps/GoogleCalculator", "/system");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.3") == "1" then
 	ui_print("@Google Calendar");
 	ui_print("- Installing Google Calendar ");
+	delete_recursive("/system/app/GoogleCalendar");
 	package_extract_dir("chetan/Apps/GoogleCalendar", "/system");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.4") == "1" then
 	ui_print("@Google Clock");
 	ui_print("- Installing Google Clock ");
+	delete_recursive("/system/app/GoogleClock");
 	package_extract_dir("chetan/Apps/GoogleClock", "/system");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.5") == "1" then
 	ui_print("@Google Phone");
 	ui_print("- Installing Google Phone ");
+	delete_recursive("/system/priv-app/GooglePhone");
 	package_extract_dir("chetan/Apps/dialer", "/system");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.6") == "1" then
 	ui_print("@Google Contacts");
 	ui_print("- Installing Google Contacts ");
+	delete_recursive("/system/priv-app/GoogleContact");
 	package_extract_dir("chetan/Apps/GoogleContact", "/system");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.7") == "1" then
 	ui_print("@Sony Music");
 	ui_print("- Installing Sony Music ");
-	package_extract_dir("chetan/Apps/SonyMusic", "/system");
-endif;
-ui_print(" ");
-if file_getprop("/tmp/aroma-data/apps.prop","item.1.8") == "1" then
-	ui_print("@Lock Sound Effect");
-	ui_print("- Replacing Lock Sound effect ");
-	package_extract_dir("chetan/Sounds/Lock-Effect", "/system");
-endif;
-ui_print(" ");
-if file_getprop("/tmp/aroma-data/apps.prop","item.1.9") == "1" then
-	ui_print("@Unlock Sound Effect");
-	ui_print("- Replacing Unlock Sound effect ");
-	package_extract_dir("chetan/Sounds/Unlock-Effect", "/system");
-endif;
+	delete_recursive("/system/app/SonyMusic");
+	package_extract_dir("chetan/Apps/RetroMusic", "/system");
+
 set_progress(0.80);
+
+#################################
+ui_print("@____MISC____ ");
+
+ui_print(" ");
 if file_getprop("/tmp/aroma-data/misc.prop","item.1.1") == "1" then
 	ui_print("Executing default files");
 	package_extract_dir("chetan/etc/default", "/system");
 endif;
-ui_print(" ");
-#################################
-ui_print("@____MISC____ ");
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/misc.prop","item.1.2") == "1" then
 	ui_print("@pref.apps");
