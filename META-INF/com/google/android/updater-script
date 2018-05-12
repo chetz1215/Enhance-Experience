@@ -197,8 +197,8 @@ ui_print(" ");
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.7") == "1" then
 	ui_print("@Sony Music");
 	ui_print("- Installing Sony Music ");
-	delete_recursive("/system/app/SonyMusic");
-	package_extract_dir("chetan/Apps/RetroMusic", "/system");
+	delete_recursive("/system/app/RetroMusic");
+	package_extract_dir("chetan/Apps/Music", "/system");
 
 set_progress(0.80);
 
@@ -208,18 +208,18 @@ ui_print("@____MISC____ ");
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/misc.prop","item.1.1") == "1" then
 	ui_print("Executing default files");
-	package_extract_dir("chetan/etc/default", "/system");
+	package_extract_dir("chetan/etc/default", "/system/etc/default/default-permissions");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/misc.prop","item.1.2") == "1" then
 	ui_print("@pref.apps");
 	ui_print("- Extracting pref apps in /etc ");
-	package_extract_dir("chetan/etc/pa", "/system");
+	package_extract_dir("chetan/etc/pa", "/system/etc/preferred-apps");
 endif;
 ui_print(" ");
 if file_getprop("/tmp/aroma-data/misc.prop","item.1.3") == "1" then
 	ui_print("@Settings permissions");
-	package_extract_dir("chetan/etc/Permissions", "/system");
+	package_extract_dir("chetan/etc/Permissions", "/system/etc/permissions");
     ui_print("-Setting permissions to GooglePhone");
 endif;
 ui_print(" ");
