@@ -19,7 +19,7 @@ ini_set("rom_name",			"Enhance Experience");
 ini_set("rom_version",		"v16.1");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 6.0+");
-ini_set("rom_date",		    "22/04/2018");
+ini_set("rom_date",		    "12/05/2018");
 ini_set("rom_warning",      "IF YOUR CPU SHOWS arm64,Continue");
 ini_set("force_colorspace", "rgba");
 ##
@@ -222,13 +222,13 @@ checkbox(
   "apps.prop",	
 	
   	"Select which Apps to install","",                              2, #-- Group 1
-	"AndroidMessages","Updated to: 3.1.042. From: 2.9.051",0,
+	"AndroidMessages","Updated to: 2.9.052.",0,
 	"Google Calculator","Current: 7.4.1",0,
-	"Google Calendar","Updated to: 5.8.28. From: 5.8.20",0,
-	"Google Clock","Updated to: 5.2.1. From: 5.2",0,
-	"Google Phone","Updated to: 19.0.1934. From: 17.0.1866",0,
-	"Google Contacts","Updated to: 2.6.5. From: 2.5.4",0,
-	"Sony Music","Updated to: 9.3.13.A.1.0. From: 9.3.12.A.4.2",0
+	"Google Calendar","Updated to: 5.8.28.",0,
+	"Google Clock","Updated to: 5.2.1.",0,
+	"Google Phone","Updated to: 20.0.1954.",0,
+	"Google Contacts","Updated to: 2.7.2.",0,
+	"Retro Music","Updated to: 1.5.385.",0
 );
 
 
