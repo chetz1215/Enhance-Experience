@@ -143,8 +143,7 @@ ui_print(" ");
 if file_getprop("/tmp/aroma-data/deletelist.prop","item.1.8") == "1" then
 	ui_print(" Dirty flash: Working! ");
 	ui_print("- Done");
-	set_progress(0.40);
-	
+
 endif;
 
 ui_print(" ");
@@ -199,7 +198,7 @@ if file_getprop("/tmp/aroma-data/apps.prop","item.1.7") == "1" then
 	ui_print("- Installing Sony Music ");
 	delete_recursive("/system/app/RetroMusic");
 	package_extract_dir("chetan/Apps/Music", "/system");
-
+endif;
 set_progress(0.80);
 
 #################################

@@ -105,7 +105,8 @@ menubox(
       
       "Changelog",                 "To see changelog",                      "@pen",             #-- selected = 1
       "Credits",                   "Who helped me to make this mod.",       "@pan_tool",        #-- selected = 2
-      "How to navigate",           "Helps you how to use this.",            "@android"          #-- selected = 3
+      "How to navigate",           "Helps you how to use this.",            "@android",          #-- selected = 3
+      "Exit",                      "Abort installtion.",                    "@exit"             #-- selected = 4
   );
  
 if prop("dialog.prop","selected")=="1" then
@@ -115,7 +116,7 @@ if prop("dialog.prop","selected")=="1" then
       #-- Text
         resread("changelog.txt")
     );
-endif;
+ endif;
   
   
   if prop("dialog.prop","selected")=="2" then
@@ -125,7 +126,7 @@ endif;
       #-- Text
         resread("credits.txt")
     );
-  endif;
+ endif;
 
   
   if prop("dialog.prop","selected")=="3" then
@@ -135,8 +136,11 @@ endif;
       #-- Text
         resread("navigate.txt")
     );
-  endif;
-  
+ endif;
+ 
+  if prop("dialog.prop","selected")=="4" then
+  exit("");
+ endif;
   
 menubox(
 	  "Android Version",
@@ -159,17 +163,7 @@ selectbox(
 		 "Uninstall Enhance Experience","UnEnhance your phone", 0                #-- selected.1 = 2
 );
 
-if prop("flash.prop","selected.1")=="1" then
-menubox(
-             "Clean or Dirty flash?",
-             "Choose between them",
-             "icons/update",
-             "cleandirty.prop", 
-             
-             "Dirty Flash", "You know it.",                                              "@extension",             #-- selected = 1
-             "Clean flash","Mostly required when a version bump or new rom.",            "@apps"                   #-- selected = 2
-);
-
+if prop("flash.prop","selected.1") == "2" then
 setvar("retstatus",
   install(
 	#-- Title
@@ -188,9 +182,19 @@ setvar("retstatus",
 	  "</b>. Press Next to continue else Save logs if you encountred a bug."
   )
 );
-
 ini_set("text_next", "Finish");
 endif;
+
+menubox(
+             "Clean or Dirty flash?",
+             "Choose between them",
+             "icons/update",
+             "cleandirty.prop", 
+             
+             "Dirty Flash", "You know it.",                                              "@extension",             #-- selected = 1
+             "Clean flash","Mostly required when a version bump or new rom.",            "@apps"                   #-- selected = 2
+);
+
 
 if prop("cleandirty.prop","selected") == "2" then
 
@@ -206,14 +210,12 @@ checkbox(
 	"Calendar","Stock lineageos Calendar app.",0,
 	"Clock","Stock lineageos Clock app.",0,
 	"Phone","Stock lineageos Phone app.",0,
-	"Eleven","Stock lineageos Music app.",0,
+	"Music","Eleven/Retro",0,
 	"Contacts","Stock LOS Contact app",0,
-    "dirty_flash_mechanism_errorless#*","",1
-	
-         
+    "for_dirty_flash","(wont effect if you keep it check)",1
+	         
 );
 endif;
-
 
 checkbox(
   "Install",
@@ -261,7 +263,7 @@ setvar("retstatus",
 	  "</b>. This may take several seconds.",
 	
 	#-- Installation Icon
-      "@Apps",
+      "@install",
 	
 	#-- Installation Finish Message
       "Enhancing Completed! Thank you for downloading <b>"+ini_get("rom_name")+
