@@ -16,7 +16,7 @@
 # It's Made by chetan_1215 kindly don't steal any stuffs! Ask my permissions!
 
 ini_set("rom_name",			"Enhance Experience");
-ini_set("rom_version",		"v17.0");
+ini_set("rom_version",		"v16.1");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 7.0+");
 ini_set("rom_date",		    "12/05/2018");
