@@ -151,7 +151,7 @@ menubox(
       "Changelog",                 "To see changelog",                      "@pen",             #-- selected = 1
       "Credits",                   "Who helped me to make this mod.",       "@pan_tool",        #-- selected = 2
       "How to navigate",           "Helps you how to use this.",            "@android",          #-- selected = 3
-      "Exit",                      "Abort",                                     "@exit"             #-- selected = 4
+      "Exit",                      "Abort",                                 "@exit"             #-- selected = 4
   );
  
 if prop("dialog.prop","selected")=="1" then
