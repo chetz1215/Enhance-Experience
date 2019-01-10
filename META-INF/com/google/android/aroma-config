@@ -16,7 +16,7 @@
 # It's Made by chetan_1215 kindly don't steal any stuffs! Ask my permissions!
 
 ini_set("rom_name",			"Enhance Experience");
-ini_set("rom_version",		"v16.1");
+ini_set("rom_version",		"v17.0");
 ini_set("rom_author",		"chetan_1215");
 ini_set("rom_device",		"Android Devices 7.0+");
 ini_set("rom_date",		    "12/05/2018");
@@ -148,10 +148,11 @@ menubox(
       "@security",      
       "dialog.prop",
       
+      "To Continue",               "Select any option from below",          "@new_release"      #-- selected = 0     
       "Changelog",                 "To see changelog",                      "@pen",             #-- selected = 1
       "Credits",                   "Who helped me to make this mod.",       "@pan_tool",        #-- selected = 2
-      "How to navigate",           "Helps you how to use this.",            "@android",          #-- selected = 3
-      "Exit",                      "Abort",                                     "@exit"             #-- selected = 4
+      "How to navigate",           "Helps you how to use this.",            "@android",         #-- selected = 3
+      "Exit",                      "Abort",                                 "@exit"             #-- selected = 4
   );
  
 if prop("dialog.prop","selected")=="1" then

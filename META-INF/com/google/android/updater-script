@@ -56,7 +56,7 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.0") == "2" then
 		ui_print("deleting Google Calculator");
 
 endif;
-#######
+####################
 if file_getprop("/tmp/aroma-data/cleandirty.prop","selected") == "1" then
     ui_print("@Selected: Dirty flash");
 	ui_print("- Preparing mod to delete files");
