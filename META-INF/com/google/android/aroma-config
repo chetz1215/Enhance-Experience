@@ -49,7 +49,7 @@ viewbox(
 	"<~MOD>:\t\t <b><#selectbg_g>" +ini_get("rom_version")+ "</b></#>\n"+
 	"<~Update Date>:\t <b><#selectbg_g>" +ini_get("rom_date")+ "</b></#>\n"+
 	"<~Author>:\t\t <b><#selectbg_g>" +ini_get("rom_author")+ "</b></#>\n"+
-    "\n\n\n\n"+
+    "\n\n\n"+
     "Press next to continue.",
   
   #-- Icon
@@ -95,10 +95,55 @@ viewbox(
   );
 
 
+menubox(
+	  "Android Version",
+	  "Select Your android Version",
+	  "icons/update",
+	  "device.prop",
+       
+      "9.0  ",               "Pie",                    "@android-p",             #-- selected = 1
+	  "8.0+ ",	             "Oreo",	               "@android-o",         	 #-- selected = 2
+	  "7.0+ ",	             "Nougat",	               "@android-n"              #-- selected = 3							
+);
+
+selectbox(
+         "Install Or Uninstall",
+		 "Choose between them",
+		 "icons/update",
+		 "flash.prop",
+		 
+		 "Install Enhance Experience", "Enhance your phone", 1,                   #-- selected.1 = 1
+		 "Uninstall Enhance Experience","UnEnhance your phone", 0                #-- selected.1 = 2
+);
+
+  if prop("flash.prop","selected.0")=="2" 
+  then
+setvar("retstatus",
+  install(
+	#-- Title
+      "Installing",
+	
+	#-- Installation Process message
+	  "<b>"+ini_get("rom_name")+"</b> installation.\n\n"+
+      "Please wait while installation wizard installs <b>"+ini_get("rom_name")+
+	  "</b>. This may take several seconds.",
+	
+	#-- Installation Icon
+      "@Apps",
+	
+	#-- Installation Finish Message
+      "Enhancing Completed! Thank you for downloading <b>"+ini_get("rom_name")+
+	  "</b>. Press Next to continue else Save logs if you encountred a bug."
+  )
+);
+ini_set("text_next", "Finish");
+endif;
+ if prop("flash.prop","selected")=="4" then
+  exit("");
+ endif;
 
 menubox(
       "Info",
-      
       "Select what you want to see.",      
       "@security",      
       "dialog.prop",
@@ -106,7 +151,7 @@ menubox(
       "Changelog",                 "To see changelog",                      "@pen",             #-- selected = 1
       "Credits",                   "Who helped me to make this mod.",       "@pan_tool",        #-- selected = 2
       "How to navigate",           "Helps you how to use this.",            "@android",          #-- selected = 3
-      "Exit",                      "Abort installtion.",                    "@exit"             #-- selected = 4
+      "Exit",                      "Abort",                                     "@exit"             #-- selected = 4
   );
  
 if prop("dialog.prop","selected")=="1" then
@@ -138,53 +183,9 @@ if prop("dialog.prop","selected")=="1" then
     );
  endif;
  
-  if prop("dialog.prop","selected")=="4" then
+ if prop("dialog.prop","selected")=="4" then
   exit("");
  endif;
-  
-menubox(
-	  "Android Version",
-	  "Select Your android Version",
-	  "icons/update",
-	  "device.prop",
-
-	  "8.0+  ",	             "Oreo",	               "@android-o",         	 #-- selected = 1
-	  "7.0+ ",	             "Nougat",	               "@android-n",             #-- selected = 2
-	  "6.0+ ",        	     "Marshmallow",            "@android-m"              #-- selected = 3 							
-);
-
-selectbox(
-         "Install Or Uninstall",
-		 "Choose between them",
-		 "icons/update",
-		 "flash.prop",
-		 
-		 "Install Enhance Experience", "Enhance your phone", 1,                   #-- selected.1 = 1
-		 "Uninstall Enhance Experience","UnEnhance your phone", 0                #-- selected.1 = 2
-);
-
-if prop("flash.prop","selected.1") == "2" then
-setvar("retstatus",
-  install(
-	#-- Title
-      "Installing",
-	
-	#-- Installation Process message
-	  "<b>"+ini_get("rom_name")+"</b> installation.\n\n"+
-      "Please wait while installation wizard installs <b>"+ini_get("rom_name")+
-	  "</b>. This may take several seconds.",
-	
-	#-- Installation Icon
-      "@Apps",
-	
-	#-- Installation Finish Message
-      "Enhancing Completed! Thank you for downloading <b>"+ini_get("rom_name")+
-	  "</b>. Press Next to continue else Save logs if you encountred a bug."
-  )
-);
-ini_set("text_next", "Finish");
-endif;
-
 menubox(
              "Clean or Dirty flash?",
              "Choose between them",

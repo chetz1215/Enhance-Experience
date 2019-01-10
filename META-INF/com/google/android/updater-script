@@ -17,24 +17,24 @@ run_program("/sbin/busybox", "mount", "/system");
 set_progress(0.10);
 if file_getprop("/tmp/aroma-data/device.prop","selected") == "1" then
 	ui_print("@Mounting system");
+	ui_print("@Selected: 9.0+ device");
+	ui_print(" ");
+	package_extract_dir("chetan/Android/9.0", "/sdcard");
+endif;
+if file_getprop("/tmp/aroma-data/device.prop","selected") == "2" then
+	ui_print("@Mounting system");
 	ui_print("@Selected: 8.0+ device");
 	ui_print(" ");
 	package_extract_dir("chetan/Android/8.0", "/sdcard");
 endif;
-if file_getprop("/tmp/aroma-data/device.prop","selected") == "2" then
+if file_getprop("/tmp/aroma-data/device.prop","selected") == "3" then
 	ui_print("@Mounting system");
-	ui_print("@Selected: 7.0+ device");
+	ui_print("@Selected: 7.0 device");
 	ui_print(" ");
 	package_extract_dir("chetan/Android/7.0", "/sdcard");
 endif;
-if file_getprop("/tmp/aroma-data/device.prop","selected") == "3" then
-	ui_print("@Mounting system");
-	ui_print("@Selected: 6.0 device");
-	ui_print(" ");
-	package_extract_dir("chetan/Android/6.0", "/sdcard");
-endif;
-###################3
-if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "1" then
+###################
+if file_getprop("/tmp/aroma-data/flash.prop","selected.0") == "1" then
     ui_print("@Selected: INSTALL");
     ui_print("Performing calculations...");
 	ui_print("Checking aroma data...");
@@ -42,7 +42,9 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "1" then
 	ui_print(" ");
 endif;
 set_progress(0.20);
-if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
+
+
+if file_getprop("/tmp/aroma-data/flash.prop","selected.0") == "2" then
 	ui_print("@Selected: Uninstall");
     ui_print("Performing calculations...");
 	ui_print("Checking aroma data...");
@@ -52,17 +54,7 @@ if file_getprop("/tmp/aroma-data/flash.prop","selected.1") == "2" then
 		ui_print("deleting android messages...");
 	delete_recursive("/system/app/AndroidMessages");
 		ui_print("deleting Google Calculator");
-    delete_recursive("/system/app/GoogleCalculator");
-		ui_print("deleteing Google Calendar...");
-    delete_recursive("/system/app/GoogleCalendar");
-		ui_print("deleting Google clock...");
-    delete_recursive("/system/app/GoogleClock");
-		ui_print("deleting Sony Music...");
-    delete_recursive("/system/app/RetroMusic");
-			ui_print("deleting GoogleContact...");
-    delete_recursive("/system/priv-app/GoogleContact");
-		ui_print("deleting GooglePhone...");
-    delete_recursive("/system/priv-app/GooglePhone");
+
 endif;
 #######
 if file_getprop("/tmp/aroma-data/cleandirty.prop","selected") == "1" then
