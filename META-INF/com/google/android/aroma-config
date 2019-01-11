@@ -116,9 +116,20 @@ selectbox(
 		 "Uninstall Enhance Experience","UnEnhance your phone", 0                #-- selected.1 = 2
 );
 
-  if prop("flash.prop","selected.0")=="2" 
+  if prop("flash.prop","selected.1")=="2" 
   then
+  menubox(
+      "Uninstall Tab",
+      "Select what you want to see.",      
+      "@security",      
+      "uninstall.prop",
+      
+      "Uninstall",                 "Complete Uninstall.",                                        "@pen",             #-- selected = 1
+      "Optional Delete",           "Choose apps to delete which you installed from here.",       "@pan_tool          #-- selected = 2
+
+  );
   
+  if prop("uninstall.prop","selected")=="1"
 setvar("retstatus",
   install(
 	#-- Title
@@ -139,9 +150,6 @@ setvar("retstatus",
 );
 ini_set("text_next", "Finish");
 endif;
- if prop("flash.prop","selected")=="4" then
-  exit("");
- endif;
 
 menubox(
       "Info",
@@ -151,7 +159,7 @@ menubox(
       
       "Changelog",                 "To see changelog",                      "@pen",             #-- selected = 1
       "Credits",                   "Who helped me to make this mod.",       "@pan_tool",        #-- selected = 2
-      "How to navigate",           "Helps you how to use this.",            "@android",          #-- selected = 3
+      "Installation Manual",       "Helps you how to use this.",            "@android",         #-- selected = 3
       "Exit",                      "Abort",                                 "@exit"             #-- selected = 4
   );
  
@@ -187,6 +195,7 @@ if prop("dialog.prop","selected")=="1" then
  if prop("dialog.prop","selected")=="4" then
   exit("");
  endif;
+ 
 menubox(
              "Clean or Dirty flash?",
              "Choose between them",
