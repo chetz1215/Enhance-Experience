@@ -118,6 +118,7 @@ selectbox(
 
   if prop("flash.prop","selected.0")=="2" 
   then
+  
 setvar("retstatus",
   install(
 	#-- Title
@@ -225,13 +226,13 @@ checkbox(
   "apps.prop",	
 	
   	"Select which Apps to install","",                              2, #-- Group 1
-	"AndroidMessages","Updated to: 2.9.052.",0,
-	"Google Calculator","Current: 7.4.1",0,
-	"Google Calendar","Updated to: 5.8.28.",0,
-	"Google Clock","Updated to: 5.2.1.",0,
-	"Google Phone","Updated to: 20.0.1954.",0,
-	"Google Contacts","Updated to: 2.7.2.",0,
-	"Retro Music","Updated to: 1.5.385.",0
+	"AndroidMessages","@Updated",0,
+	"Google Calculator","Updated",0,
+	"Google Calendar","Updated",0,
+	"Google Clock","Updated",0,
+	"Google Phone","Updated",0,
+	"Google Contacts","Updated",0,
+	"Retro Music","Updated",0
 );
 
 
@@ -247,10 +248,7 @@ checkbox(
     "permissions","To set folder premissions for apps.",1,
 	"Google Phone Framework","Please select this if you'll install google phone.",0,
 	"Make Google phone default phone app","If you don't want do to this manually, check here.",0,
-	"Bubble For Google phone","Enables Bubble modification in google phone",0,
-	"Optimize for faster boot","So far works with only android 8.1",0,
-    "FIX DA BUG","Select the bug you facing and it will try to fix it",2,
-    "Clock Fc","Select this if you facing fc in clock app.",0
+	"Bubble For Google phone","Enables Bubble modification in google phone",0
 );
 
 setvar("retstatus",

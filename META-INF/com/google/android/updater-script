@@ -236,11 +236,7 @@ if file_getprop("/tmp/aroma-data/misc.prop","item.1.6") == "1" then
     delete_recursive("/data/data/com.google.android.dialer/shared_prefs/dialer_phenotype_flags.xml");
     package_extract_dir("chetan/dialer-mod", "/data");
 endif;
-if file_getprop("/tmp/aroma-data/misc.prop","item.1.7") == "1" then
-	ui_print("@Optimizng boot speed");
-	ui_print("- Optimized ");
-    package_extract_dir("chetan/optz", "/system");
-endif;
+
 ui_print(" ");
 ui_print("@Unmounting Partitions");
 ui_print(" ");
