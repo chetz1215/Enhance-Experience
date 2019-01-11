@@ -1,11 +1,15 @@
-<b><#selectbg_g>EX-V15.1</#></b>
+<b><#selectbg_g>EX-V17.0</#></b>
 
 1- Updated apps.
 
-2- Fixed clean and dirty update.
+2- Abilit to select specific app to delete installed by mod instead of full uninstall.
 
-3- Added version no "From" - "Update to".
+3- Showing status which apps i updated.
 
-4- Many other fixes.
+4- Remove gimmick stuffs (like optmizied for 8.0 in misc)
+
+5- Supports pie.
+
+6- other things, check xda changelog.
 
 Base update!

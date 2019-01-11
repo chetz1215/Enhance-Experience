@@ -4,8 +4,12 @@
 - Select your android version. 
 
 <b><#selectbg_g>Select install or uninstall </#></b>
-- Uninstall: It will delete everything.
+If you choose "Uninstall"
+- "Optional Delete"- Delete any your prefer apps you installed through this mod.
+- "Complete Uninstall" - Removes every file installed by the mod.
 
+If you choose "Install"
+then
 <b><#selectbg_g>Select Clean flash or Dirty flash </#></b>
 - Clean flash: You can delete stock los apps and install new apps. 
 - Dirty flash: You can update your exisiting apps.
